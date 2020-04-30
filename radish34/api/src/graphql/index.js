@@ -12,6 +12,7 @@ import ScalarsResolver from './resolvers/scalars';
 // Collection schemas
 import OrganizationSchema from './schemas/organization';
 import RFPSchema from './schemas/rfp';
+import ProductSchema from './schemas/product';
 import NoticeSchema from './schemas/notice';
 import ContractSchema from './schemas/contract';
 import WalletSchema from './schemas/wallet';
@@ -56,6 +57,7 @@ export const schemas = [
   ServerStateSchema,
   ServerSettingsSchema,
   RFPSchema,
+  ProductSchema,
   NoticeSchema,
   ContractSchema,
   WalletSchema,

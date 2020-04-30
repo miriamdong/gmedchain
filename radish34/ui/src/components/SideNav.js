@@ -155,7 +155,7 @@ const SideNav = ({ notices, selected }) => {
   const groups = groupBy(notices, 'category');
   const results = groupBy(notices, 'status');
   const createForms = [
-    { value: '', label: 'Create New Item' },
+    { value: '/product/create', label: 'Add Product' },
     { value: '/rfp/create', label: 'Create New RFP ' },
     { value: '/purchase-order/create', label: 'Create New Purchase Order '},
   ];

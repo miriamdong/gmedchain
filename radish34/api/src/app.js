@@ -19,6 +19,8 @@ import PartnerSchema from './schemas/partner';
 import PartnerResolver from './resolvers/partner';
 import RFPSchema from './schemas/rfp';
 import RFPResolver from './resolvers/rfp';
+import ProductResolver from './resolvers/product';
+import ProductSchema from './schemas/product';
 import NoticeSchema from './schemas/notice';
 import NoticeResolver from './resolvers/notice';
 import ContractSchema from './schemas/contract';
@@ -48,11 +50,13 @@ const typeDefs = [
   ServerStateSchema,
   ServerSettingsSchema,
   RFPSchema,
+  ProductSchema,
   PartnerSchema,
   NoticeSchema,
   ContractSchema,
   WalletSchema,
   ProposalSchema,
+  
   MSASchema,
   ToastrSchema,
   POSchema,
@@ -64,6 +68,7 @@ const resolvers = [
   ServerStateResolver,
   ServerSettingsResolver,
   RFPResolver,
+  ProductResolver,
   PartnerResolver,
   NoticeResolver,
   ContractResolver,

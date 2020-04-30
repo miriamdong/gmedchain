@@ -35,7 +35,7 @@ const NoNotices = () => {
 
   return (
   <div className={classes.root}>
-    <Typography variant="h4" className={classes.welcome}>Welcome to Radish</Typography>
+    <Typography variant="h4" className={classes.welcome}>GMedChain</Typography>
     <Typography variant="h3" className={classes.intro}>Some text here to get users motivated to start using the application.</Typography>
     <Typography variant="h5" className={classes.calltoAction}>Let's get started by connecting to partners</Typography>
     <div className={classes.buttonWrapper}>

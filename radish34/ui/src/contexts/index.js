@@ -9,6 +9,7 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ServerSettingsProvider } from './server-settings-context';
 import { PartnerProvider } from './partner-context';
+import { AddProductProvider } from './add-product-context';
 import { NoticeProvider } from './notice-context';
 import { RFPProvider } from './rfp-context';
 import { ProposalProvider } from './proposal-context';
@@ -63,11 +64,13 @@ function AppProviders({ children }) {
           <ServerSettingsProvider>
             <PartnerProvider>
               <RFPProvider>
-                <ProposalProvider>
-                  <MSAProvider>
-                    <PurchaseOrderProvider>{children}</PurchaseOrderProvider>
-                  </MSAProvider>
-                </ProposalProvider>
+                <AddProductProvider>
+                  <ProposalProvider>
+                    <MSAProvider>
+                      <PurchaseOrderProvider>{children}</PurchaseOrderProvider>
+                    </MSAProvider>
+                  </ProposalProvider>
+                </AddProductProvider>
               </RFPProvider>
             </PartnerProvider>
           </ServerSettingsProvider>
