@@ -1,8 +1,8 @@
-# Radish34
+# GMedChain platform
 
-__Radish34__ is a product procurement application that utilizes the __Baseline Protocol__ to gain unprecedented data integrity while maintaining privacy and security for its users.
+__GMedChain platform__ is a product procurement application that utilizes the __Baseline Protocol__ to gain unprecedented data integrity while maintaining privacy and security for its users.
 
-Disclaimer: This implementation is a demo, and production aspects of key management, wallet management, cloud hosting, integration to other third party tools and performance optimization are left out of scope to drive adoption and present a base set of tools for the community to provide inputs and take this further.
+Disclaimer: This implementation is a demo to show the potential of GMedChain, and production aspects of key management, wallet management, cloud hosting, integration to other third party tools and performance optimization are left out of scope for later.
 
 ## Prerequisites to run the demo
 
@@ -55,7 +55,7 @@ The steps below illustrate the individual steps, that can be viewed as the break
 6. Run `cd radish34/ && npm run deploy` to deploy the smart contracts. ** This takes about 2 minutes **
     - This docker container first deploys both the Registry contract and the OrgRegistry contract.
     - Then it registers (1) Buyer and (2) Supplier organizations. The corresponding `/config/config-${role}.json` files are updated with the newly deployed contract addresses.
-    - The goal of deployment is to initialize the Radish34 system by pre-registering a buyer and 2 suppliers with an `OrgRegistry` smart contract, which holds the organization metadata to thus enable any ongoing procurement operations.
+    - The goal of deployment is to initialize the GMedChain platform system by pre-registering a buyer and 2 suppliers with an `OrgRegistry` smart contract, which holds the organization metadata to thus enable any ongoing procurement operations.
     - Essentially the deployment is based on deploying an `ERC1820Registry` client called the `Registrar`, followed by registering an interface for `OrgRegistry` with the `ERC1820Registry`, then registering the roles of the buyer and supplier with the `OrgRegistry`
     - In addition, the contracts that are necessary for privacy management, `Shield` and `Verifier` contract are deployed to the network
     - Any changes to the config files are updated in the individual db instances `mongo-${role}`
@@ -276,7 +276,7 @@ nvm use 11
 4. Running tests
    - In some cases, while running the test suite `npm run test` there could be a socket hang up error. This is potentially due to race conditions across the different containers for the API services. To resolve this issue run `docker-compose restart api-buyer api-supplier1 api-supplier2` to get rid of errors while running the test suite.
 
-1. Check health of the containers. Running `docker ps` will show all the containers for the Radish34 demo and if they are healthy or not. To inspect the health check results of a container run the following `docker inspect --format='{{json .State.Health}}' your-container-name`
+1. Check health of the containers. Running `docker ps` will show all the containers for the GMedChain platform demo and if they are healthy or not. To inspect the health check results of a container run the following `docker inspect --format='{{json .State.Health}}' your-container-name`
 
 ### Front-end Environment
 
