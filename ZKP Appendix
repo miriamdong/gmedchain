@@ -1,0 +1,19 @@
+Zero-knowledge Proof (ZKP) is an encryption scheme. In this method, one party (Prover) can prove that a specific statement is true to the other party (Verifier) without disclosing any additional information.
+
+Benefits of ZKP in Blockchain System
+ 
+1. Build Trusted Messaging
+ZKP builds an end-to-end trust in the messaging world without leaking any extra information. This is one of the prime applications of zero-knowledge proof in the blockchain world.
+ 
+2. Facilitate Authentication
+ZKP can also facilitate transmitting sensitive information like authentication information with better security. It can build a secure channel for the users to employ their information without revealing it. 
+ 
+3. Strengthen Private Blockchain Transactions
+ZKP  helps in making it nearly impossible to hack or intercept the private blockchain transactions.
+ 
+4. High Security for Sensitive Information
+ZKP adds a high-end security level to every block containing sensitive business information
+ 
+What are the benefits of ZKP for GMedChain?
+ 
+Thanks to ZKP, suppliers and buyers can make business together using a trustable and secured platform without leaking any sensitive information on the Blockchain. Indeed, this type of data stays on clients’ databases, and only proofs are shared throughout the platform.
