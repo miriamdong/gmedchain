@@ -1,34 +1,40 @@
-# Welcome to Baseline
+# Welcome to GMedChain
 
 <div align="center">
-  <img src="docs/assets/baseline-logo/Web/examples/PNGs/horizontal/baselineHorizontal-Logo-FullColor.png" />
+  <img src="docs/assets/gmedchain-logo/gmedchain.png" />
   <p>
-    Combining advances in cryptography, messaging, and blockchain to execute
+    We are providing healthcare supply chain solutions so more people have access to safe, affordable & efficient 
     <br/>
-    secure and private business processes via the public Ethereum Mainnet.
-  </p>
-  Read the full documentation <a href="https://docs.baseline-protocol.org">here at docs.baseline-protocol.org</a>.
-  <p>
-    <em>Join our <a href="https://communityinviter.com/apps/ethereum-baseline/join-us">Slack workspace</a> for Baseline news and updates!</em>
+    medical care around the world. 
   </p>
   <br/>
 </div>
 
-__Baseline__ is an open source initiative with a large and growing team of supporting companies. The first code was donated by Ernst & Young and ConsenSys, with support from Microsoft, and is now receiving contributions from many other companies. The purpose of the project is to bring enterprises and complex business processes to the Ethereum Mainnet, while guarding the privacy constraints and needs of a typical group of enterprises. 
+Lost supplies, fraudulent medicine, and supply chain confusion; in times like this, we understand medical equipment is a public resource, akin to the water we drink, the air we breathe, and the levels of freedom we should enjoy as a human right. To that end, visibility must be pervasive throughout the medical supply chain in order to better serve the public. 
 
-The __Baseline Protocol__ defines a series of steps to privately and securely synchronize data and business logic between multiple independent systems of record, using the Ethereum Mainnet as an auditable common frame of reference. This protocol implements best practices around data consistency and compartmentalization, and leverages public Ethereum for verifying execution of private transactions, contracts and tokens on the Mainnet using ZKP (zkSnarks). The __Baseline Protocol__ is designed such that it can be extended and applied to any database/workflow.
+With more than 3 million cases of COVID-19 worldwide, hospitals around the world are struggling to obtain safe and reliable supplies. Frontline healthcare workers are running low on resources, with no medicine to help. 
 
-# Radish34 Demo
+According to WHO, it is estimated that up to $200 billion worth of counterfeit pharmaceutical products are sold globally every year, according to the United Nations, up to US$2 trillion of procurement costs could be lost to corruption and fraud.
 
-In order to demonstrate the __Baseline Protocol__, we needed a use-case. The use-case chosen was product procurement within a supply-chain, and the custom application built for this workflow is called __Radish34__. This application was built as a proof of concept for the Baseline Protocol. 
+In real life, this means vital services are delayed, much-needed equipment never reaches hospitals, critical infrastructure is never built, and people's lives and well-being are needlessly at risk.
 
-The __Baseline Protocol__ code is currently embedded inside the `/radish-api` directory, but we are in the process of moving that code into the `/baseline` directory to clearly distinguish the protocol from the use-case. Once this move is complete, `radish-api` will import `baseline` as a module, which will be the same process that other projects will need to follow to implement __Baseline__.
+How do we improve this long and costly supply chain system so that more people can have timely access to better health services in both normal and difficult times? 
+
+
+
+That is __GMedChain__.
+
+# The platform
+
+We've built a platform based on the [__Baseline Protocol__](https://github.com/ethereum-oasis/baseline), a joint project between Consensys, Microsoft and EY. 
+
+The __GMedChain platform__ code is currently embedded inside the `/radish-api` directory. This name, Radish, came from the initial name of the Baseline protocol PoC, but we will rename it later. You don't need to deep dive into this directory if you just want to deploy the platform: a __Makefile__ is available, described in the section right above.
 
 ## Quickstart
 
 A `Makefile` has been included for convenience; most of its targets wrap `npm`, `docker` and `solc` invocations.
 
-Just want to get the __Baseline Protocol__ running locally? The following sequence will build the monorepo, start the __Baseline Protocol__ stack locally, deploy contracts and run the full test suite. *Note: this typically takes at least 20 minutes to complete.
+Just want to get the __GMedChain platform__ running locally? The following sequence will build the monorepo, start the __GMedChain platform__ stack locally, deploy contracts and run the full test suite. *Note: this typically takes at least 20 minutes to complete.
 
 ```
 make && make start && make test
@@ -45,21 +51,21 @@ Here are the targets currently exposed by the `Makefile`:
 | `make` | Alias for `make build`. |
 | `make build` | Build all modules within the monorepo. |
 | `make build-containers` | Dockerize all modules within the monorepo. |
-| `make clean` | Reclaim disk used by all modules (i.e. `node_modules/`) and the local docker environment. This effectively uninstalls your local __Baseline__ environment and will require building from scratch. |
+| `make clean` | Reclaim disk used by all modules (i.e. `node_modules/`) and the local docker environment. This effectively uninstalls your local __GMedChain platform__ environment and will require building from scratch. |
 | `make contracts` | Compile the Solidity contracts. |
 | `make deploy-contracts` | Deploy the Solidity contracts. Requires the stack to be running. |
 | `make npm-install` | `npm i` wrapper for all modules in the monorepo. |
-| `make start` | Start the full __Baseline__ stack. Requires `docker` service to be running with at least 12 GB RAM allocation. |
-| `make stop` | Stop the running __Baseline__ stack. |
+| `make start` | Start the full __GMedChain platform__ stack. Requires `docker` service to be running with at least 12 GB RAM allocation. |
+| `make stop` | Stop the running __GMedChain platform__ stack. |
 | `make system-check` | Verify that `docker` is configured properly. |
 | `make restart` | Stop and start the `docker` stack. |
 | `make reset` | Clean the docker environment by pruning the docker networks and volumes. |
 | `make test` | Run the full test suite. Requires the stack to be running. |
 | `make zk-circuits` | Perform zk-SNARK trusted setups for circuits contained within `zkp/circuits` |
 
-## Running Radish34
+## Running the GMedChain platform
 
-To run the __Radish34__ application, follow the instructions in [radish34/README.md](radish34/README.md).
+To run the __GMedChain platform__ application, follow the instructions in [radish34/README.md](radish34/README.md).
 
 `cd radish34` and go from there 🚀
 
@@ -84,11 +90,3 @@ Required: NodeJS 11.15 (nvm is recommended)
  - run `make npm-install` to install the top level packages
 
 optionally `make clean` to clean out any `node_modules` folders installed by the `make npm-install` command.
-
-# How to contribute?
-
-See [our contributing guidelines](CONTRIBUTING.md)
-
-# License
-
-All code in this repo is released under the CC0 1.0 Universal public domain dedication. For the full license text, refer to [license.md](license.md).
