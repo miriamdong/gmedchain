@@ -1,0 +1,164 @@
+@import '../../docs/css/veriabls.scss';
+
+.footerArea {
+  padding-top: 104px;
+  position: relative;
+}
+
+.newsleter {
+  text-align: center;
+  padding-bottom: 84px;
+
+  h2 {
+    font-size: 30px;
+    margin-bottom: 35px;
+
+    @media (max-width:767px) {
+      font-size: 24px;
+    }
+  }
+
+  form {
+    width: 425px;
+    margin: auto;
+    position: relative;
+
+    @media (max-width:500px) {
+      width: 100%;
+    }
+
+    input {
+      width: 100%;
+      height: 60px;
+      border-radius: 40px;
+      padding-left: 20px;
+      padding-right: 170px;
+      border: 1px solid #fff;
+      box-shadow: 0px 5px 15px 0px rgba(68, 68, 68, 0.05);
+      transition: all .4s ease-in-out 0s;
+
+      &:focus {
+        outline: none;
+        border-color: $themePrimarCcolor;
+      }
+    }
+
+    button {
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      width: 150px;
+      height: 50px;
+      border-radius: 40px;
+      text-transform: capitalize;
+      background: -webkit-gradient(linear, left top, right top, from(#00a7d5), to(#00ded8));
+      background: linear-gradient(to right, #00a7d5, #00ded8);
+      color: #fff;
+      font-weight: 600;
+
+      &:hover {
+        color: rgba(255, 255, 255, .9);
+      }
+    }
+  }
+}
+
+.footerLogo {
+  img {
+    height: 45px;
+    margin-bottom: 25px;
+  }
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.socialMedia {
+  display: flex;
+
+  li {
+    margin-right: 20px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      display: block;
+      font-size: 18px;
+      color: $themePrimarCcolor;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+}
+
+.footertitle {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 25px;
+
+  @media (max-width:1279px) {
+    font-size: 24px;
+  }
+}
+
+.footerMenus {
+  li {
+    line-height: 35px;
+
+    a {
+      display: inline-block;
+      transition: all .4s ease-in-out 0s;
+      color: #444;
+
+      &:hover {
+        color: $themePrimarCcolor;
+
+      }
+    }
+  }
+}
+
+.footerEarningWrap {
+  p {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    display: flex;
+
+    li {
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      span {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      h4 {
+        font-size: 25px;
+        color: #03a4ad;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid #e3eff0;
+  padding-top: 30px;
+  padding-bottom: 14px;
+  margin-top: 80px;
+}

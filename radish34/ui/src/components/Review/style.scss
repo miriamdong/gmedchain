@@ -1,0 +1,65 @@
+@import '../../docs/css/veriabls.scss';
+
+.reviewItem {
+  overflow: hidden;
+  background: #fff;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0px 5px 15px 0px rgba(68, 68, 68, 0.1);
+  border-radius: 5px;
+
+  @media (max-width:767px) {
+    padding: 20px;
+  }
+
+  .reviewImg {
+    float: left;
+    margin-right: 20px;
+
+    @media (max-width:767px) {
+      float: none;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  .reviewContent {
+    overflow: hidden;
+  }
+
+  .reviewContentTop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+
+    .ContentLeft {
+      h4 {
+        font-size: 20px;
+        font-weight: 700;
+
+        a {
+          display: inline-block;
+          color: $headingColor;
+
+          &:hover {
+            color: $themePrimarCcolor;
+          }
+        }
+      }
+    }
+
+    .contentRight {
+
+      @media (max-width:767px) {
+        margin-top: 5px;
+      }
+
+      .ratingIcon {
+        color: #fba12c;
+        margin-right: 10px;
+      }
+    }
+  }
+}

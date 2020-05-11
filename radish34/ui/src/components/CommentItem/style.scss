@@ -1,0 +1,68 @@
+.commentItem {
+  .commentItemWrap {
+    overflow: hidden;
+    background: #f8f8f8;
+    padding: 30px;
+    margin-bottom: 20px;
+
+    .commentImg {
+      float: left;
+      margin-right: 20px;
+
+      @media (max-width:767px) {
+        float: none;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+
+      img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+    }
+
+    .commentContent {
+      overflow: hidden;
+
+      h4 {
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      span {
+        font-size: 14px;
+        display: block;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      button {
+
+        background: #72cfd4;
+        font-size: 14px;
+        color: #fff;
+        display: inline-block;
+        border-radius: 50px;
+        display: inline-block;
+        min-height: 30px;
+        min-width: 80px;
+        text-transform: capitalize;
+        padding: 0;
+
+        span {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .commentItems {
+    padding-left: 30px;
+  }
+}

@@ -13,12 +13,13 @@ import DropDown from './DropDown';
 
 const useStyles = makeStyles(() => ({
   root: {
-    overflowX: 'scroll',
+    overflowX: 'hidden',
     maxHeight: '100%',
     width: '100%',
-    background: '#f8fafb',
+    background: '#404E67',
     height: '100vh',
     marginTop: '1rem',
+    color:"white"
   },
   filterList: {
     marginTop: 0,
@@ -50,7 +51,7 @@ const useStyles = makeStyles(() => ({
   },
   link: {
     textDecoration: 'none',
-    color: 'black',
+    color: 'white',
     fontWeight: 'bold',
     display: 'flex',
     width: '100%',
@@ -103,6 +104,7 @@ const categories = [
     url: '/notices/purchase-order',
   },
   { label: 'Invoices', key: 'invoice', url: '/notices/invoice'},
+  { label: 'Dashboard', key: 'dashboard', url: '/dashboard'},
   // { label: 'MSA', key: 'msa', url: '/notices/msa', icon: DescriptionIcon },
   // { label: "Procurement Requests", key: "procurementRequest", url: "/notices/procurementrequest", icon: LibraryBooksIcon },
 ];
@@ -173,7 +175,7 @@ const SideNav = ({ notices, selected }) => {
   return (
     <div className={classes.root}>
       <List className={classes.filterList}>
-        <DropDown className={classes.createNewButton} items={createForms} onChange={dropdownOnChange} value={createForm} />
+        {/*<DropDown className={classes.createNewButton} items={createForms} onChange={dropdownOnChange} value={createForm} />*/}
         <Category icon={Inbox} label="Inbox" category={results.incoming} url="/notices/inbox" />
         <Category icon={Send} label="Outbox" category={results.outgoing} url="/notices/outbox" />
       </List>

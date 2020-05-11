@@ -1,0 +1,139 @@
+@import '../../docs/css/veriabls.scss';
+
+.purchaseLicenceWrap {
+  h3 {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+
+    i {
+      margin-right: 10px;
+
+      &::before {
+        font-size: 18px;
+        color: $themePrimarCcolor;
+      }
+    }
+  }
+}
+
+.purchaseLicenceList {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+
+  li {
+    width: 33.33%;
+
+    button {
+      min-height: 130px;
+      border-radius: 0;
+      min-width: 100%;
+      text-transform: capitalize;
+      background: #f4f6f7;
+      border-right: 1px solid #e9e7e7;
+      color: #666;
+
+      span {
+        display: block;
+
+        span,
+        del {
+          display: block;
+          margin-bottom: 3px;
+        }
+
+        h4 {
+          font-size: 24px;
+          font-weight: 700;
+        }
+      }
+
+      &.active {
+        background: #00a7d5;
+        background: -webkit-linear-gradient(left, #00a7d5, #00ded8);
+        background: -moz-linear-gradient(left, #00a7d5, #00ded8);
+        background: -o-linear-gradient(left, #00a7d5, #00ded8);
+        background: -ms-linear-gradient(left, #00a7d5, #00ded8);
+        background: -webkit-gradient(linear, left top, right top, from(#00a7d5), to(#00ded8));
+        background: -webkit-linear-gradient(left, #00a7d5, #00ded8);
+        color: #fff;
+        border-right: 1px solid #fff;
+
+        h4 {
+          color: #fff;
+        }
+      }
+    }
+
+    &:last-child {
+      button {
+        border-right: none;
+      }
+    }
+  }
+}
+
+.purchaseLicenceContent {
+  p {
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    margin-bottom: 30px;
+
+    li {
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+
+      &::before {
+        content: "\f11d";
+        font-family: Flaticon;
+        font-size: 14px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.widgetWrapContent {
+  p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      &.name {
+        font-size: 18px;
+        color: #666;
+        text-transform: capitalize;
+
+        i {
+          margin-right: 10px;
+
+          &::before {
+            color: $themePrimarCcolor;
+            font-size: 18px;
+          }
+        }
+      }
+
+      &.value {
+        font-size: 24px;
+      }
+
+      &.ratingItem {
+        .ratingIcon {
+          color: #fba12c;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

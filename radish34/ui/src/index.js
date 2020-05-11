@@ -9,6 +9,7 @@ import theme from './theme';
 import App from './App';
 import AppProviders from './contexts';
 import * as serviceWorker from './serviceWorker';
+import GlobalStyle from './global-styles'
 
 ReactDOM.render(
   <Router>
@@ -19,6 +20,7 @@ ReactDOM.render(
           <App />
         </AppProviders>
       </Suspense>
+      <GlobalStyle/>
     </ThemeProvider>
   </Router>,
   document.getElementById('root'),

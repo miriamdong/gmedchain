@@ -1,0 +1,192 @@
+.testmonialArea {
+  .container {
+    width: 1770px;
+
+    @media (max-width:1780px) {
+      width: 1440px;
+    }
+
+    @media (max-width:1300px) {
+      width: 100%;
+    }
+  }
+
+  .sectionTitle {
+    p {
+      padding: 0px 450px;
+
+      @media (max-width:1279px) {
+        padding: 0px 240px;
+      }
+
+      @media (max-width:991px) {
+        padding: 0px 140px;
+      }
+
+      @media (max-width:767px) {
+        padding: 0px;
+      }
+    }
+  }
+
+  .testSliders {
+    padding-bottom: 80px;
+
+    .slick-dots {
+      bottom: 0;
+
+      li {
+        padding: 0px 10px;
+        width: unset;
+        height: unset;
+
+        button {
+          width: 60px;
+          background: #dddddd;
+          content: "";
+          height: 3px;
+          opacity: 1;
+          padding: 0;
+
+          &::before {
+            content: "";
+          }
+
+          &::after {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            width: 10px;
+            height: 3px;
+            content: "";
+            z-index: 1;
+            background: #fff;
+          }
+        }
+
+        &.slick-active {
+          button {
+            background: #00ded8;
+          }
+        }
+      }
+    }
+
+    .slick-list {
+      margin: -16px;
+      padding-top: 30px !important;
+
+
+      div {
+        &:focus {
+          outline: none;
+        }
+      }
+
+      .slick-center {
+        .testWrap {
+          padding: 16px;
+
+          .testItem {
+            background: #eaf7f7;
+            border-color: #eaf7f7;
+
+            &::before {
+              background: -webkit-linear-gradient(left, #00ded8, #00a7d5);
+              background: -moz-linear-gradient(left, #00ded8, #00a7d5);
+              background: -o-linear-gradient(left, #00ded8, #00a7d5);
+              background: -ms-linear-gradient(left, #00ded8, #00a7d5);
+              background: -webkit-gradient(linear, left top, right top, from(#00ded8), to(#00a7d5));
+              background: linear-gradient(left, #00ded8, #00a7d5);
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+            }
+
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.testWrap {
+  padding: 16px;
+
+  .testItem {
+    border: 1px solid #ebebeb;
+    position: relative;
+    border-radius: 10px;
+    padding: 60px 50px 45px;
+    position: relative;
+
+    @media (max-width:500px) {
+      padding: 60px 25px 45px;
+    }
+
+    &::before {
+      font-family: "Flaticon";
+      content: "\f118";
+      font-size: 40px;
+      font-size: 2.5rem;
+      color: #ddd;
+      position: absolute;
+      right: 50px;
+      top: 25px;
+      line-height: 40px;
+    }
+
+    &::after {
+      content: "";
+      width: 0;
+      height: 5px;
+      background: #00ded8;
+      background: -webkit-linear-gradient(left, #00ded8, #00a7d5);
+      background: -moz-linear-gradient(left, #00ded8, #00a7d5);
+      background: -o-linear-gradient(left, #00ded8, #00a7d5);
+      background: -ms-linear-gradient(left, #00ded8, #00a7d5);
+      background: -webkit-gradient(linear, left top, right top, from(#00ded8), to(#00a7d5));
+      background: linear-gradient(left, #00ded8, #00a7d5);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      border-radius: 0 0 10px 10px;
+      transition: all .4s ease-in-out 0s;
+    }
+
+    span {
+      &.image {
+        display: inline-block;
+        padding: 8px;
+        background: #fff;
+        border: 1px solid #ebebeb;
+        border-radius: 50%;
+        position: absolute;
+        top: -45px;
+        margin-bottom: 10px;
+
+        img {
+          border-radius: 50%;
+        }
+      }
+    }
+
+    h4 {
+      font-size: 16px;
+    }
+
+    span {
+      display: inline-block;
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  }
+}

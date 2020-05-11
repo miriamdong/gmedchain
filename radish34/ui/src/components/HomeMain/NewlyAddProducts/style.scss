@@ -1,0 +1,148 @@
+@import '../../../docs/css/veriabls.scss';
+
+.newProductSlider {
+  padding-bottom: 120px;
+
+  .slick-list {
+    margin: -16px;
+  }
+
+  div {
+    &:focus {
+      outline: none;
+    }
+  }
+
+  .slick-arrow {
+    position: absolute;
+    bottom: -16px;
+    top: auto;
+    transform: translate(0);
+    height: 60px;
+    width: 60px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 5px 15px rgba(138, 138, 138, .1);
+    border-radius: 50%;
+    z-index: 1;
+    transition: all .4s ease-in-out 0s;
+
+    &::after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      background: linear-gradient(to bottom, #00ded8, #00a7d5);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      transition: all .4s ease-in-out 0s;
+      opacity: 0;
+    }
+
+    &::before {
+      color: $headingColor;
+      font-family: 'themify';
+      transition: all .4s ease-in-out 0s;
+
+    }
+
+    &:hover {
+      &::before {
+        color: #fff;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &.slick-next {
+      right: 44%;
+      content: "\e649";
+
+      @media (max-width:1279px) {
+        right: 43%;
+      }
+
+      @media (max-width:991px) {
+        right: 40%;
+      }
+
+      @media (max-width:767px) {
+        right: 25%;
+      }
+    }
+
+    &.slick-prev {
+      left: 44%;
+      content: "\e648";
+
+      @media (max-width:1279px) {
+        left: 43%;
+      }
+
+      @media (max-width:991px) {
+        left: 40%;
+      }
+
+      @media (max-width:767px) {
+        left: 25%;
+      }
+    }
+  }
+}
+
+.newProductWrap {
+  padding: 16px;
+
+  .newProductItem {
+    background: #fff;
+    min-height: 170px;
+    width: 100%;
+    display: block;
+    padding: 20px;
+    text-align: center;
+    color: $headingColor;
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 400;
+    box-shadow: 0px 5px 15px 0px rgba(82, 82, 82, 0.1);
+    border-radius: 35px;
+    transition: all .4s ease-in-out 0s;
+
+    @media (max-width:400px) {
+      border-radius: 15px;
+      padding: 10px;
+      min-height: 150px;
+    }
+
+    &:hover {
+      background: #fafafa;
+      color: $magen;
+    }
+
+    i {
+      width: 100%;
+      height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 80px;
+      margin-bottom: 10px;
+
+      @media (max-width:400px) {
+        border-radius: 15px;
+      }
+
+      &::before {
+        font-size: 50px;
+        color: #fff;
+      }
+    }
+  }
+
+}

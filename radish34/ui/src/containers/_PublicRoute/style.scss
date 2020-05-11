@@ -1,0 +1,28 @@
+.PublicRoute {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1e1b4d !important;
+  background: linear-gradient(to bottom right, #6b0bd8, transparent 45%, transparent 55%, rgba(236, 30, 190, 0.8)), linear-gradient(to top right, rgba(230, 130, 0, 0.8), transparent 45%, transparent 55%, #1c97d9) #ffcc00;
+
+  .logo {
+    width: 250px;
+  }
+
+  .LanguageSwitcher {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    div {
+      svg {
+        color: #fff;
+      }
+    }
+
+  }
+
+}

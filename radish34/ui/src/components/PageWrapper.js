@@ -7,8 +7,8 @@ const useStyles = makeStyles(() => ({
   root: {
     maxHeight: '100%',
     width: '100%',
-    overflowX: 'scroll',
-    background: 'white',
+    overflowX: 'hidden',
+    background: '#F6F7FB',
   },
 }));
 
@@ -17,7 +17,7 @@ const PageWrapper = ({ children }) => {
 
   return (
     <main className={classes.root}>
-      <Grid container spacing={3}>
+      <Grid container >
         <Grid item xs={12}>
           {children}
         </Grid>

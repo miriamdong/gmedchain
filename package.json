@@ -28,5 +28,8 @@
   "homepage": "https://baseline-protocol.org",
   "devDependencies": {
     "minimist": ">=0.2.1"
+  },
+  "dependencies": {
+    "react-intl": "^4.5.1"
   }
 }

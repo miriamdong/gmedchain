@@ -1,0 +1,482 @@
+@import '../../docs/css/veriabls.scss';
+
+.headerArea {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 11;
+
+
+
+  &.headerAreaStyleTwo {
+    position: relative;
+  }
+}
+
+.logoWrapper {
+  @media (max-width:767px) {
+    text-align: center;
+    display: block;
+    
+  }
+
+  img {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    //height: 45px;
+  }
+}
+
+.mainmenu {
+  display: flex;
+  justify-content: flex-end;
+
+  li {
+    margin-right: 10px;
+    padding: 30px 11px;
+    position: relative;
+    
+    @media (max-width: 1440px) {
+      padding: 30px 10px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+
+      a,
+      span {
+        color: $themePrimarCcolor;
+        
+      }
+    }
+
+    &.active {
+      &::before {
+        width: 100%;
+      }
+
+      a {
+        color: $themePrimarCcolor;
+      }
+    }
+
+    a,
+    span {
+      font-size: 16px;
+      color: $textColor;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
+
+    ul {
+      position: absolute;
+      text-align: left;
+      width: 200px;
+      top: 100%;
+      left: 0px;
+      background: #fff;
+      opacity: 0;
+      z-index: 11;
+      border-top: 2px solid $themePrimarCcolor;
+      visibility: hidden;
+      box-shadow: 0px 1px 60px 3px rgba(0, 0, 0, .05);
+      transition: all 0.4s ease-in-out 0s;
+
+      li {
+        padding: 5px;
+        margin-right: 0;
+
+        &::before {
+          display: none;
+        }
+
+        a {
+          font-size: 14px;
+          color: $textColor !important;
+          text-transform: capitalize;
+
+          &.active {
+            color: $themePrimarCcolor !important;
+          }
+        }
+
+        &:hover {
+          a {
+            color: $themePrimarCcolor !important;
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+
+    &:hover {
+      ul {
+        visibility: visible;
+        top: 100%;
+        padding: 15px;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.headerRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  li {
+    margin-right: 20px;
+    cursor: pointer;
+    position: relative;
+
+    span {
+      &.value {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #00a9d5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-size: 10px;
+        line-height: 12px;
+        font-weight: 600;
+        color: #fff;
+        top: -5px;
+        right: -10px;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+
+.cartWrapper {
+
+  .cartPaper {
+    width: 300px;
+    border-radius: 0px;
+    overflow: visible;
+    padding: 15px 15px 25px;
+    box-shadow: 0px 1px 60px 3px rgba(0, 0, 0, .05);
+    height: unset;
+
+    .scrollbarArea {
+      height: 200px;
+      margin: 0px -15px;
+    }
+
+    .cartLists {
+      padding: 0;
+
+      .cartList {
+        &:focus {
+          outline: none;
+        }
+      }
+
+    }
+
+    .cartItems {
+
+      li {
+        &:last-child {
+          a {
+            border-bottom: none;
+          }
+        }
+
+        .cartItem {
+          display: flex;
+          min-height: 65px;
+          border-radius: 0px;
+          justify-content: flex-start;
+          padding: 10px 15px;
+          border-bottom: 1px solid #efefef;
+
+
+
+          &:hover {
+            background: #fafafa;
+          }
+
+          .cartImg {
+            margin-right: 20px;
+            display: block;
+          }
+
+          .cartContent {
+            display: block;
+
+            h4 {
+              text-transform: capitalize;
+              font-size: 14px;
+              line-height: 18px;
+              font-weight: 400;
+            }
+
+            span {
+              font-size: 12px;
+              color: #888;
+              line-height: 14px;
+            }
+          }
+        }
+      }
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #efefef;
+      margin: 0px -15px;
+    }
+  }
+}
+
+
+.responsiveMenuTrigger {
+  display: none;
+
+  @media (max-width: 1300px) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .responsiveMenuTriggerItem {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    li {
+      width: 20px;
+      height: 2px;
+      background: $headingColor;
+      margin-bottom: 2px;
+      transition: all 0.4s ease-in-out 0s;
+
+      &.first {
+        width: 25px;
+      }
+
+      &.third {
+        width: 15px;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    &.active {
+      li {
+        &.first {
+          width: 15px;
+        }
+
+        &.third {
+          width: 25px;
+        }
+      }
+    }
+  }
+}
+
+.responsiveMenuWrap {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  padding: 30px 15px;
+  background: $headingColor;
+  z-index: 11;
+  visibility: hidden;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: all 0.4s ease-in-out 0s;
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transform: scaleY(1);
+  }
+
+  .responsiveColups {
+    margin: 0 !important;
+    box-shadow: none;
+    background: transparent !important;
+    margin-bottom: 10px !important;
+
+    &::before {
+      display: none;
+    }
+
+    .responsiveColupdHead {
+      min-height: unset;
+      padding: 0;
+
+      &[aria-expanded="false"]:after {
+        content: "\f107";
+        font-family: "fontawesome";
+        font-size: 18px;
+        color: #fff;
+      }
+
+      &[aria-expanded="true"]:after {
+        content: "\f106";
+        font-family: "fontawesome";
+        font-size: 18px;
+        color: #fff;
+      }
+
+      .MuiExpansionPanelSummary-content {
+        margin: 0;
+        color: #fff;
+        text-transform: capitalize;
+      }
+    }
+
+    .responsiveColupdDetails {
+      padding-bottom: 0;
+
+      .responsiveSubmenuItems {
+        li {
+          a {
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 5px;
+
+            &.active {
+              color: $themePrimarCcolor;
+            }
+          }
+
+          &:last-child {
+            a {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  a {
+    color: #fff;
+    text-transform: capitalize;
+    display: block;
+    margin-bottom: 10px;
+
+    &.active {
+      color: $themePrimarCcolor;
+    }
+  }
+}
+
+.headerStyleWhite {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 11;
+  border-color: rgba(255, 255, 255, .3);
+
+
+  .responsiveMenuTrigger {
+    .responsiveMenuTriggerItem {
+      li {
+        background: #fff;
+      }
+    }
+  }
+
+  .mainmenu {
+    li {
+
+      a,
+      span {
+        color: #fff;
+      }
+    }
+  }
+
+  .language {
+    .LanguageSwitcher {
+      .languageSwitcher {
+        .languageSelectWrap {
+          border: 1px solid #dceaf7;
+
+          .countryName {
+            color: #fff;
+          }
+
+        }
+
+        svg {
+          fill: #fff;
+        }
+
+      }
+    }
+  }
+
+  .headerRight {
+    li {
+      button {
+        color: #fff;
+      }
+    }
+  }
+
+  .profileWrap {
+    .profile {
+      .name {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.searchWrap {
+  .searchPaper {
+    width: 280px;
+
+    .searchLists {
+      padding: 15px;
+
+      li {
+        form {
+          position: relative;
+
+          button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            background: -webkit-linear-gradient(left, #00a7d5, #00ded8);
+            background: linear-gradient(to right, #00a7d5, #00ded8);
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

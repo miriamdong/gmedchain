@@ -41,28 +41,38 @@ const useStyles = makeStyles(() => ({
 const AddSuppliersField = ({ formik, suppliers }) => {
   const classes = useStyles();
   const [disabled, setDisabled] = useState({});
+  const onTest = () => {
+    // Do something
+    
+    alert('pass');
+  
+  
+  
+  }
 
   return (
-    <Table className={classes.table}>
+    <Table className={classes.table} onChange={window.scrollTo(420,420)}>
       <TableHead>
         <TableRow>
           <TableCell>Supplier</TableCell>
         </TableRow>
       </TableHead>
-      <FieldArray
+      <FieldArray 
         name="recipients"
-        render={arrayHelpers => (
-          <TableBody>
+        render={
+          arrayHelpers => (
+          <TableBody >
             {formik.values.recipients &&
               formik.values.recipients.length > 0 &&
               formik.values.recipients.map((supplier, index) => (
-                <TableRow key={index}>
-                  <TableCell className={classes.tableCell}>
+                <TableRow key={index} >
+                  <TableCell className={classes.tableCell} >
                     <Autocomplete
                       options={suppliers}
                       getOptionLabel={partner => partner.name}
                       disabled={disabled[index]}
                       onChange={(e, v) => {
+                        
                         const { __typename, ...partner } = v;
                         if (!find(formik.values.recipients, partner.name)) {
                           formik.setFieldValue(`recipients.${index}.partner`, partner);
@@ -114,7 +124,8 @@ const AddSuppliersField = ({ formik, suppliers }) => {
                 <Button
                   type="button"
                   className={classes.button}
-                  onClick={() => !formik.values.recipients.includes('') && arrayHelpers.push('')}
+                 
+                  onClick={() => !formik.values.recipients.includes('') && arrayHelpers.push('') }
                 >
                   <Add className={classes.icon} />
                   Add Supplier
@@ -130,7 +141,10 @@ const AddSuppliersField = ({ formik, suppliers }) => {
               </TableCell>
             </TableRow>
           </TableBody>
-        )}
+      
+      )
+      
+      }
       />
     </Table>
   );

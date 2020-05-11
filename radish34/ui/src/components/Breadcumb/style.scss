@@ -1,0 +1,50 @@
+@import '../../docs/css/veriabls.scss';
+
+.breadcumbArea {
+  background: #fcfaf8;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+.breadcumbWrap {
+  text-align: center;
+
+  h2 {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 50px;
+
+    @media (max-width:767px) {
+      font-size: 30px;
+      line-height: 40px;
+    }
+  }
+
+  ul {
+    li {
+      display: inline-block;
+
+      &::after {
+        content: "/";
+        margin: 0px 5px;
+      }
+
+      &:last-child {
+        &:after {
+          display: none;
+        }
+      }
+
+      a {
+        display: inline-block;
+        color: $headingColor;
+
+        &:hover {
+          color: $themePrimarCcolor;
+        }
+      }
+    }
+  }
+}

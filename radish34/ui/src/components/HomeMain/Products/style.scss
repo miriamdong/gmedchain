@@ -1,0 +1,52 @@
+@import '../../../docs/css/veriabls.scss';
+
+.productTabs {
+  padding: 25px;
+  border: 1px solid #ebebeb;
+  margin-bottom: 60px;
+
+  @media (max-width:991px) {
+    padding-bottom: 15px;
+  }
+
+  .productTabContainer {
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media (max-width:991px) {
+      justify-content: flex-start;
+    }
+
+    button {
+      width: unset;
+      opacity: 1;
+      text-transform: capitalize;
+      height: 40px;
+      min-height: 40px;
+      background: #f0f6f6;
+      min-width: unset;
+      font-size: 16px;
+      border-radius: 30px;
+      padding: 0px 25px;
+
+      @media (max-width:1279px) {
+        font-size: 14px;
+      }
+
+      @media (max-width:991px) {
+        margin-bottom: 10px;
+        margin-right: 10px;
+      }
+
+      &[aria-selected="true"] {
+        background: -webkit-gradient(linear, left top, right top, from(#00a7d5), to(#00ded8));
+        background: linear-gradient(to right, #00a7d5, #00ded8);
+        color: #fff;
+      }
+    }
+  }
+
+  .productTabIndicator {
+    display: none;
+  }
+}

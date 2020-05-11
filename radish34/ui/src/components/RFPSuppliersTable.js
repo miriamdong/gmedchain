@@ -74,7 +74,8 @@ const RFPSuppliersTable = ({ rfp, proposals, setOpen, open, createContract }) =>
                     ) : (
                       <Button
                         variant="contained"
-                        style={{ color: '#fff', background: 'blue' }}
+                        style={{ 'font-size': '13px'}}
+                        className="btn"
                         onClick={() => setOpen({ [index]: true })}
                       >
                         Create Contract

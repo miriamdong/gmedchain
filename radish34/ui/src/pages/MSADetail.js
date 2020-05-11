@@ -13,6 +13,7 @@ import { GET_RFP } from '../graphql/rfp';
 import { GET_PROPOSAL_BY_RFP_AND_SUPPLIER } from '../graphql/proposal';
 import { GET_PARTNER_BY_IDENTITY } from '../graphql/partners';
 import { ServerSettingsContext } from '../contexts/server-settings-context';
+import Tracker from '../components/Tracker';
 
 const MSADetail = () => {
   const { id } = useParams();
@@ -65,13 +66,23 @@ const MSADetail = () => {
 
   return (
     <Container>
-      {rfp && <Typography variant='h2'>{rfp.description}</Typography>}
-      {buyer && <Typography>{name}</Typography>}
-      {rfp && <SKUTable sku={rfp.sku} description={rfp.skuDescription} />}
+      <Grid container spacing={4} className="container">
+        <Grid key={1} item lg={8} sm={6} xs={12}>
+           <Typography variant="h4">Contract Tracker</Typography>
+        </Grid>
+          <Grid key={1} item lg={8} sm={6} xs={12}>
+              <Tracker></Tracker>
+           </Grid>
+          <Grid key={1} item lg={4} sm={6} xs={12}>
+                {rfp && <Typography variant='h2'>{rfp.description}</Typography>}
+                {buyer && <Typography>{name}</Typography>}
+                {rfp && <SKUTable sku={rfp.sku} description={rfp.skuDescription} />}
+          </Grid>
+      </Grid>
       <Grid container>
         {proposal &&
           <>
-            <Grid item>
+            <Grid item style={{ marginLeft: '2rem' }}>
               <RateTable rates={proposal.rates} erc20ContractAddress={proposal.erc20ContractAddress} />
             </Grid>
             <Grid item style={{ marginLeft: '10rem' }}>

@@ -271,7 +271,7 @@ const ProposalForm = ({ rfp }) => {
         </Table>
         <Grid container direction="column">
           <Grid item>
-            <Button style={{ marginTop: '.5rem' }} type="submit">Send Proposal</Button>
+            <Button style={{ marginTop: '.5rem' }} className="btn mb-25" type="submit">Send Proposal</Button>
           </Grid>
         </Grid>
       </form>

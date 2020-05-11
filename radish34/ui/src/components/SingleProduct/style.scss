@@ -1,0 +1,155 @@
+@import '../../docs/css/veriabls.scss';
+
+.productWrap {
+  background: #fff;
+  box-shadow: 0px 0px 15px 0px rgba(85, 85, 85, 0.1);
+
+  .productImg {
+    position: relative;
+    overflow: hidden;
+
+    a {
+      display: block;
+
+      img {
+        transition: all .8s ease-in-out 0s;
+        transform: scale(1);
+      }
+    }
+  }
+
+  &:hover {
+    .productImg {
+      a {
+        img {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+
+  .productContent {
+    padding: 30px 30px 25px;
+
+    @media (max-width:500px) {
+      padding: 30px 15px 25px;
+    }
+
+    h3 {
+      font-size: 15px;
+      font-weight: 600;
+      font-family: $baseFont;
+    }
+
+    .author {
+      display: block;
+      font-size: 13px;
+      color: #444;
+      margin-bottom: 5px;
+    }
+
+    .rating {
+      display: block;
+
+      .ratingIcon {
+        color: #fba12c;
+
+        span {
+          padding: 0px 1px;
+        }
+      }
+
+      .review {
+        font-size: 14px;
+        display: inline-block;
+        margin-left: 10px;
+      }
+    }
+
+    .productAction {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      margin-top: 25px;
+      border-top: 1px solid #ecebed;
+
+      h4 {
+        font-size: 25px;
+        font-family: $baseFont;
+        font-weight: 600;
+
+        @media (max-width:500px) {
+          font-size: 20px;
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+
+        li {
+          button {
+            width: 40px;
+            height: 30px;
+            background: -webkit-gradient(linear, left top, right top, from(#00a7d5), to(#00ded8));
+            background: linear-gradient(to left, #00a7d5, #00ded8);
+            border: 1px solid #48d6fc;
+            min-width: 40px;
+            border-radius: 0px;
+            margin-left: 10px;
+
+            i {
+              line-height: 0;
+
+              &::before {
+                font-size: 17px;
+                color: #fff;
+                line-height: 0;
+              }
+            }
+          }
+
+          a {
+            width: 100px;
+            height: 30px;
+            text-transform: capitalize;
+            font-size: 14px;
+            color: $headingColor;
+            border: 1px solid #ecebed;
+            background: #fff;
+            border-radius: 0px;
+            font-weight: 600;
+            padding: 0;
+            z-index: 1;
+            transition: all .4s ease-in-out 0s;
+
+            &:hover {
+              color: #fff;
+              border: none;
+
+              &::before {
+                opacity: 1;
+              }
+            }
+
+            &::before {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              z-index: -1;
+              content: "";
+              background: -webkit-gradient(linear, left top, right top, from(#00a7d5), to(#00ded8));
+              background: linear-gradient(to left, #00a7d5, #00ded8);
+              opacity: 0;
+              transition: all .4s ease-in-out 0s;
+            }
+          }
+        }
+      }
+    }
+  }
+}

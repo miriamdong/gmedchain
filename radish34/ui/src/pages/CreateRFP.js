@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, Fragment } from 'react';
 import { useFormik, Field, FormikProvider, ErrorMessage } from 'formik';
 import { useHistory } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
@@ -15,6 +15,16 @@ import AddSuppliersField from '../components/AddSuppliersField';
 import { RFPContext } from '../contexts/rfp-context';
 import { PartnerContext } from '../contexts/partner-context';
 import NoticeLayout from '../components/NoticeLayout';
+import ItemDetails from '../components/ItemDetails';
+import Header from '../components/Header/Loadable';
+import Breadcumb from '../components/Breadcumb/Loadable';
+import logo from '../images/logo.png';
+import Hero from '../components/HomeMain/Hero/Loadable';
+import { Helmet } from 'react-helmet';
+import PurchaseLicence from '../components/PurchaseLicence';
+import ProductDetails from '../components/ProductDetails'
+import Footer from '../components/Footer'
+import { Grid } from '@material-ui/core'
 
 const useStyles = makeStyles(() => ({
   field: {
@@ -32,8 +42,8 @@ const useStyles = makeStyles(() => ({
     position: 'relative',
     padding: '2rem',
     margin: '0 auto',
-    width: '95%',
-    height: '100%',
+    width: '50%',
+    height: '80%',
     marginTop: '2rem',
   },
   clearIcon: {
@@ -46,7 +56,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const CreateRFP = () => {
+const CreateRFP = (e) => {
+  
   const classes = useStyles();
   const { postRFP } = useContext(RFPContext);
   const { organizations } = useContext(PartnerContext);
@@ -60,15 +71,15 @@ const CreateRFP = () => {
     return org.name !== names[currentUser]
   });
   const history = useHistory();
-
   const formik = useFormik({
     initialValues: {
-      description: '',
+      description: 'Masks N95',
       proposalDeadline: moment(Date.now()),
-      sku: '',
-      skuDescription: '',
+      sku: 'SK 233322',
+      skuDescription: 'Need it now!',
       recipients: [],
     },
+    
     onSubmit: async values => {
       const { proposalDeadline } = values;
       await postRFP({
@@ -89,22 +100,43 @@ const CreateRFP = () => {
         .min(1, 'Must add at least 1 supplier'),
     }),
   });
-
+  
   const onClear = () => history.push('/notices/rfp');
+  const menus = [
+    {
+        name: 'Home',
+        link: '/'
+    },
+    {
+        name: 'Masks N95',
+    },
+]
 
   return (
-    <NoticeLayout>
+  <Fragment>  
+      <Helmet>
+          <title>GmedChain</title>
+      </Helmet>
+      <Header
+          className="headerAreaStyleTwo"
+          logo={logo}
+      />
+      <Breadcumb
+          title={'Disposable N95 Masks'}
+          menus={menus}
+      />
+      <Grid>
       <Paper className={classes.paper} elevation={3}>
         <h1>Create a new RFP</h1>
         <Clear className={classes.clearIcon} onClick={() => onClear()} />
         <FormikProvider value={formik}>
-          <form onSubmit={formik.handleSubmit}>
+          <form onSubmit={formik.handleSubmit} >
             <TextField
               label="RFP Description"
               onChange={formik.handleChange}
               value={formik.values.description}
               name="description"
-              className={classes.field}
+              className={classes.field} 
             />
             <ErrorMessage
               name="description"
@@ -112,14 +144,17 @@ const CreateRFP = () => {
             />
             <Field name="proposalDeadline" label="Proposal Deadline" component={DatePickerField} />
             <AddSKUField formik={formik} />
-            <AddSuppliersField formik={formik} suppliers={suppliers} />
-            <Button className={classes.submitButton} type="submit">
+            <AddSuppliersField formik={formik} suppliers={suppliers}  />
+            <Button className='btn' type="submit">
               Send RFP
             </Button>
           </form>
         </FormikProvider>
-      </Paper>
-    </NoticeLayout>
+       </Paper>
+       <br></br>
+       </Grid>
+       <Footer/>
+    </Fragment>
   );
 };
 

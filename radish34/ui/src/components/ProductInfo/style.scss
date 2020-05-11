@@ -1,0 +1,36 @@
+@import '../../docs/css/veriabls.scss';
+
+.productInfoWrap {
+  h3 {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+
+    i {
+      margin-right: 10px;
+
+      &::before {
+        font-size: 18px;
+        color: $themePrimarCcolor;
+      }
+    }
+  }
+
+  ul {
+    li {
+      margin-top: 15px;
+      display: flex;
+      flex-wrap: wrap;
+
+      span {
+        width: 50%;
+        display: block;
+        font-size: 15px;
+      }
+    }
+  }
+}

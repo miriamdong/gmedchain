@@ -12,6 +12,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       marginTop: '4rem',
     },
+    
   },
   content: {
     display: 'flex',
@@ -22,6 +23,7 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.up('sm')]: {
       maxHeight: 'calc(100vh - 4rem)',
     },
+  backgroundColor: 'red !important'
   },
   scroll: {
     overflowX: 'scroll',
@@ -33,8 +35,8 @@ const Layout = ({ children }) => {
 
   return (
     <div className={classes.root}>
-      <PrimaryNavigation />
-      <div className={classes.content}>{children}</div>
+      <PrimaryNavigation  />
+      <div className={classes.content}  >{children}</div>
     </div>
   );
 };

@@ -17,7 +17,7 @@ import { MSAProvider } from './msa-context';
 import { ToastrProvider } from './ToastrContext';
 import { PurchaseOrderProvider } from './purchase-order-context';
 
-let uri = 'localhost:8001/graphql';
+let uri = 'baseline.southcentralus.cloudapp.azure.com:8001/graphql';
 
 if (window.localStorage.getItem('api')) {
   uri = window.localStorage.getItem('api');

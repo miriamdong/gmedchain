@@ -1,0 +1,27 @@
+@import '../../../docs/css/veriabls.scss';
+
+.productDetailsImg {
+  padding: 20px;
+  box-shadow: 0px 5px 15px 0px rgba(68, 68, 68, 0.1);
+  margin-bottom: 60px;
+  border-radius: 5px;
+
+  img {
+    width: 100%;
+  }
+}
+
+.authorWrapper {
+  li {
+    display: inline-block;
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .btn {
+      font-size: 14px;
+    }
+  }
+}

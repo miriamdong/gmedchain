@@ -1,0 +1,32 @@
+@import '../../docs/css/veriabls.scss';
+
+.scrollTopBtn {
+  background: -webkit-gradient(linear, left top, right top, from(#00a7d5), to(#00ded8));
+  background: linear-gradient(to right, #00a7d5, #00ded8);
+  position: absolute !important;
+  bottom: 70px;
+  right: -20px;
+  z-index: 111;
+  transform: rotate(-90deg);
+  border-radius: 0px;
+  padding: 13px 20px !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-family: $headingFont !important;
+  color: #fff;
+
+  @media (max-width:767px) {
+    bottom: 120px;
+    right: -40px;
+  }
+
+  &:hover {
+    color: rgba(255, 255, 255, .8);
+  }
+
+  svg {
+    margin-left: 15px;
+    font-size: 10px;
+  }
+}

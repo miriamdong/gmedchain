@@ -4,11 +4,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
   root: {
-    overflowX: 'scroll',
+    overflowX: 'hidden',
+    overflowY: 'hidden',
     maxHeight: '100%',
     width: '348px',
-    background: '#f8fafb',
+    background: '#404E67',
     borderRight: '1px solid #909ea9',
+    color:"white"
   },
 }));
 

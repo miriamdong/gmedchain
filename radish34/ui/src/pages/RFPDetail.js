@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext, Fragment } from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import { useParams } from 'react-router-dom';
@@ -14,6 +14,12 @@ import RFPSuppliersTable from '../components/RFPSuppliersTable';
 import ProposalForm from '../components/ProposalForm';
 import RateTable from '../components/RateTable';
 import SKUTable from '../components/SKUTable';
+import SingleProduct from '../components/SingleProduct';
+import { Grid, Tab, Tabs } from '@material-ui/core'
+
+import image1 from '../images/products/p2.jpg'
+
+
 
 const RFPDetail = () => {
   const [isSender, setIsSender] = useState(false);
@@ -96,35 +102,64 @@ const RFPDetail = () => {
   if (loading || partnerLoading) return <RadishLogo loader />;
 
   if (!data || !data.rfp) return <h1>Not Found</h1>;
+  
+  const product = 
+    {
+        name: data.rfp.sku,
+        badge: 'trending',
+        rating: 4.2,
+        image: image1,
+        author: data.rfp.skuDescription,
+        price: '$3.00',
+        review: '05',
+        id: 1
+    };
 
+  window.localStorage.setItem('product', product);
+  const detail = true;
   return (
+
     <Container>
-      <Typography variant="h4">{data.rfp.description}</Typography>
-      {!isSender && partnerData && (
-        <Typography variant="body1">
-          for {partnerData.getPartnerByMessengerKey.name}
-        </Typography>
-      )}
-      <Typography>
-        Proposal Deadline: {moment(data.rfp.proposalDeadline * 1000).format('LL')}
-      </Typography>
-      <Typography variant="h2">
-        Items Requested
-      </Typography>
-      <SKUTable sku={data.rfp.sku} description={data.rfp.skuDescription} />
-      {isSender && (
-        <RFPSuppliersTable
-          rfp={rfp}
-          proposals={recipientProposals}
-          setOpen={setOpen}
-          open={open}
-          createContract={createContract}
-        />
-      )}
-      {!isSender && data && !data.getProposalsByRFPId.length && <ProposalForm rfp={data.rfp} />}
-      {!isSender && data && data.getProposalsByRFPId.length > 0 && (
-        <RateTable rates={data.getProposalsByRFPId[0].rates} erc20ContractAddress={data.getProposalsByRFPId[0].erc20ContractAddress} />
-      )}
+        <Grid container spacing={4} className="container">
+          <Grid key={1} item lg={4} sm={6} xs={12}>
+            <SingleProduct
+                id={product.id}
+                badge={product.badge}
+                name={product.name}
+                rating={product.rating}
+                image={product.image}
+                author={product.author}
+                review={product.review}
+                price={product.price}
+                detail={detail}
+            />
+          </Grid>
+          <Grid key={1} item lg={8} sm={6} xs={12}>
+            <Typography variant="h4">{data.rfp.description}</Typography>
+            {!isSender && partnerData && (
+              <Typography variant="body1">
+                for {partnerData.getPartnerByMessengerKey.name} 
+              </Typography>
+            )}
+            <Typography>
+              Proposal Deadline: {moment(data.rfp.proposalDeadline * 1000).format('LL')}
+            </Typography>
+
+            {isSender && (
+              <RFPSuppliersTable
+                rfp={rfp}
+                proposals={recipientProposals}
+                setOpen={setOpen}
+                open={open}
+                createContract={createContract}
+              />
+            )}
+            {!isSender && data && !data.getProposalsByRFPId.length && <ProposalForm rfp={data.rfp} />}
+            {!isSender && data && data.getProposalsByRFPId.length > 0 && (
+              <RateTable rates={data.getProposalsByRFPId[0].rates} erc20ContractAddress={data.getProposalsByRFPId[0].erc20ContractAddress} />
+            )}
+        </Grid>
+      </Grid>
     </Container>
   );
 };

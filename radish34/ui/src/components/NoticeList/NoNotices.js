@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import WelcomeImage from '../../images/welcome-to-radish.png';
+import WelcomeImage from '../../images/logo.png';
 
 const useStyles = makeStyles(() => ({
   root: {

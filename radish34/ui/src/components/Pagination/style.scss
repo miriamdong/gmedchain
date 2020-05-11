@@ -1,0 +1,52 @@
+@import "../../docs/css/veriabls.scss";
+
+.paginationWrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+    padding: 0px 15px;
+  }
+
+  li {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @media (max-width: 767px) {
+      margin-right: 5px;
+    }
+
+    &.active {
+      button {
+        border-color: $themePrimarCcolor;
+        color: $themePrimarCcolor;
+      }
+    }
+
+    button {
+      border-radius: 0px;
+      height: 35px;
+      text-transform: capitalize;
+      width: 35px;
+      min-width: 35px;
+      font-weight: 600;
+      font-size: 15px;
+      color: $textColor;
+      border: 1px solid #f1f1f1;
+      background: #fff;
+      padding: 0px;
+    }
+
+    &.paginat {
+      button {
+        background: $themePrimarCcolor;
+        color: #fff;
+        font-size: 20px;
+      }
+    }
+  }
+}

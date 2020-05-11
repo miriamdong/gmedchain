@@ -200,9 +200,9 @@ const NoticesList = ({ match }) => {
   return (
     <Layout>
       <Sidebar>
-        <SideNav notices={notices} />
+        <SideNav notices={notices}  />
       </Sidebar>
-      <PageWrapper>
+      <PageWrapper >
         <NoticesTable columns={columns} options={options} notices={rows} />
       </PageWrapper>
     </Layout>

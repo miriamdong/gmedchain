@@ -11,14 +11,21 @@ import PurchaseOrder from './pages/PurchaseOrder';
 import RFP from './pages/RFP';
 import Invoice from './pages/Invoice';
 import MSA from './pages/MSA';
-import CreateRFP from './pages/CreateRFP';
 import AddProduct from './pages/AddProduct';
 import ProposalDetail from './pages/ProposalDetail';
 import CreatePurchaseOrder from './pages/CreatePurchaseOrder';
-
+import ProductGallery from './components/ProductGallery';
 import Installation from './installation';
 import Loading from './components/Loading';
+import Home from './pages/Home';
+import Dashboard from './pages/Dashboard';
+import Analytics from './pages/Analytics';
 import { ServerSettingsContext } from './contexts/server-settings-context';
+import ProductDetails from './components/ProductDetails';
+import CreateRFP from './pages/CreateRFP';
+import PriceLanding from './components/PriceLanding/Loadable'
+
+
 
 const App = () => {
   const { state, loading } = useContext(ServerSettingsContext);
@@ -34,12 +41,15 @@ const App = () => {
     return (
       <div>
         <Switch>
-          <Route exact path="/" component={NoticesList} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/notices/:category" component={NoticesList} />
           <Route exact path="/who" component={Who} />
           <Route exact path="/what" component={What} />
           <Route exact path="/how" component={How} />
           <Route exact path="/partners" component={Partner} />
+          <Route path="/product/detail" component={ProductDetails} />
+          <Route path="/product/gallery" component={ProductGallery} />
+          <Route path="/pricing/detail" component={PriceLanding} />
           <Route path="/rfp/create" component={CreateRFP} />
           <Route path="/product/create" component={AddProduct} />
           <Route path="/rfp/:id" component={RFP} />
@@ -47,6 +57,8 @@ const App = () => {
           <Route path="/invoice/:id" component={Invoice} />
           <Route path="/purchase-order/create" component={CreatePurchaseOrder} />
           <Route path="/purchase-order/:id" component={PurchaseOrder} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/analytics" component={Analytics} />
           <Route path="/contracts/:id" component={MSA} />
           <Route component={NoMatch} />
         </Switch>

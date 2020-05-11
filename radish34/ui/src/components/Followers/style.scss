@@ -1,0 +1,33 @@
+@import '../../docs/css/veriabls.scss';
+
+.followersItem {
+  overflow: hidden;
+  margin-bottom: 40px;
+
+  .followersImg {
+    float: left;
+    margin-right: 15px;
+  }
+
+  .followersContent {
+    overflow: hidden;
+
+    h4 {
+      font-size: 20px;
+      margin-bottom: 5px;
+
+      a {
+        display: inline-block;
+        color: $headingColor;
+
+        &:hover {
+          color: $themePrimarCcolor;
+        }
+      }
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
+}

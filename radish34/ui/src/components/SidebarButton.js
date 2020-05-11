@@ -8,15 +8,17 @@ import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    background: '#f8fafb',
+    background: '#404E67',
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
     paddingLeft: theme.spacing(2),
     width: '100%',
+    color:"white"
   },
   button: {
     textTransform: 'capitalize',
     paddingLeft: theme.spacing(1),
+    color:"white"
   },
   icon: {
     marginRight: theme.spacing(1),

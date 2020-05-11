@@ -1,0 +1,152 @@
+@import "../../../docs/css/veriabls.scss";
+
+.heroArea {
+  min-height: 900px;
+  position: relative;
+  z-index: 1;
+  padding-top: 100px;
+  display: flex;
+  align-items: center;
+
+  @media (max-width:1279px) {
+    min-height: 750px;
+  }
+
+  @media (max-width:991px) {
+    min-height: 595px;
+  }
+
+  @media (max-width:767px) {
+    min-height: 750px;
+  }
+
+  &::before {
+    position: absolute;
+    content: url(../../../images/hero.png);
+    right: 0;
+    top: 50px;
+    z-index: -1;
+
+    @media (max-width:1279px) {
+      display: none;
+    }
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 11;
+
+  h2 {
+    font-size: 50px;
+    line-height: 70px;
+    font-weight: 600;
+    margin-bottom: 25px;
+
+    @media (max-width:1279px) {
+      font-size: 40px;
+      line-height: 55px;
+    }
+
+    @media (max-width:767px) {
+      font-size: 24px;
+      line-height: 35px;
+    }
+
+    span {
+      color: $themePrimarCcolor;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 32px;
+    color: #444;
+    margin-bottom: 40px;
+
+    @media (max-width:1279px) {
+      font-size: 18px;
+    }
+
+    @media (max-width:767px) {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+      margin-right: 30px;
+
+      @media (max-width:380px) {
+        margin-right: 0;
+        margin-bottom: 30px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      .btn {
+        height: 45px;
+      }
+    }
+  }
+}
+
+.heroImg {
+  position: absolute;
+  right: 185px;
+  top: 115px;
+  width:560px;
+
+  @media (max-width:991px) {
+    display: none;
+  }
+
+  button {
+    background-color: #6168f3;
+    background: -webkit-gradient(linear, left top, right top, from(#c968ff), to(#6168f3));
+    background: linear-gradient(to right, #c968ff, #6168f3);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    left: 130px;
+    top: 170px;
+    animation: pulse 2s infinite;
+    color: #fff;
+    font-size: 24px;
+  }
+
+  @media (max-width:1700px) {
+    right: 90px;
+  }
+
+  @media (max-width:1279px) {
+    right: 15px;
+    top: 20px;
+  }
+}
+
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(97, 104, 243, .2);
+    box-shadow: 0 0 0 0 rgba(97, 104, 243, .2);
+  }
+
+  70% {
+    -moz-box-shadow: 0 0 0 15px rgba(97, 104, 243, 0);
+    box-shadow: 0 0 0 15px rgba(97, 104, 243, 0);
+  }
+
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(97, 104, 243, 0);
+    box-shadow: 0 0 0 0 rgba(97, 104, 243, 0);
+  }
+}

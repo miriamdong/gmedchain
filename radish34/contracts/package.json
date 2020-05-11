@@ -23,7 +23,8 @@
     "@babel/preset-env": "^7.9.0",
     "ethereum-doppelganger": "^0.0.7",
     "ethers": "^4.0.46",
-    "openzeppelin-solidity": "^2.5.0"
+    "openzeppelin-solidity": "^2.5.0",
+    "react-intl": "^4.5.1"
   },
   "jest": {
     "testEnvironment": "node",

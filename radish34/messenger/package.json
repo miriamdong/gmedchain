@@ -48,6 +48,7 @@
     "express": "^4.17.1",
     "express-winston": "^4.0.3",
     "mongoose": "^5.9.5",
+    "react-intl": "^4.5.1",
     "web3": "^1.2.6",
     "winston": "^3.2.1"
   },

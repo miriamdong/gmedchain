@@ -1,0 +1,11 @@
+import { createMuiTheme } from '@material-ui/core/styles';
+
+export default createMuiTheme({
+    palette: {
+        type: 'light',
+    },
+    typography: {
+        fontSize: 14,
+        useNextVariants: true,
+    },
+});

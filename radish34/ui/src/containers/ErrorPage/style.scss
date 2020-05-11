@@ -1,0 +1,25 @@
+.errorWrap {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    font-weight: 700;
+  }
+
+  p {
+    padding: 0px 200px;
+    margin-bottom: 30px;
+
+    @media (max-width:991px) {
+      padding: 0px 100px;
+    }
+
+    @media (max-width:767px) {
+      padding: 0;
+    }
+  }
+}

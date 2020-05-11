@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
+
+
 const SignatureItem = props => {
   const { status, details, role } = props;
   return (
@@ -17,16 +19,19 @@ const SignatureItem = props => {
   );
 };
 
+function handleModelChange(changes) {
+  alert('GoJS model changed!');
+}
+
 const Signatures = props => {
   const { buyer, supplier, buyerStatus, supplierStatus } = props;
   return (
-    <>
-      <h3>Signatures</h3>
-      <Grid container direction="row">
-        <SignatureItem role="Buyer" status={buyerStatus ? 'Approved' : 'Pending'} details={buyer} />
+      <Grid className="productDetailsArea ptb-104">
+        <Grid container direction="row">
+          <SignatureItem role="Buyer" status={buyerStatus ? 'Approved' : 'Pending'} details={buyer} />
         <SignatureItem role="Supplier" status={supplierStatus ? 'Approved' : 'Pending'} details={supplier} />
-      </Grid>
-    </>
+        </Grid>
+    </Grid>
   );
 };
 

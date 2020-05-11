@@ -9,15 +9,16 @@ import Link from './Link';
 import UserSelection from './UserSelection';
 import Balance from './Balance';
 import { ServerSettingsContext } from '../contexts/server-settings-context';
-import RadishLogoDark from '../images/radish-logo-dark.svg';
-import RadishLogoLight from '../images/radish-logo-light.svg';
+import RadishLogoDark from '../images/logo.png';
+import RadishLogoLight from '../images/logo.png';
+
 
 const useStyles = makeStyles(theme => ({
   appBar: {
-    boxShadow: '0px 1px 0px #909EA9',
+    boxShadow: '0 1px 15px rgba(0,0,0,0.04), 0 1px 6px rgba(0,0,0,0.04)',
   },
   dark: {
-    background: 'linear-gradient(177.98deg, #212B34 3.6%, #62737F 100%)',
+    background: 'white',
   },
   light: {
     background: 'white',
@@ -36,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   logoImage: {
     marginRight: '.5rem',
     paddingRight: '.5rem',
-    borderRight: '1px solid #C3CDD3',
+    borderRight: '0px solid #C3CDD3',
   },
   logoText: {
     display: 'none',
@@ -62,7 +63,7 @@ export default function PrimaryNavigation() {
 
   return (
     <div>
-      <AppBar className={`${classes.appBar} ${classes[theme]}`} position="fixed" elevation={0}>
+      <AppBar className={`${classes.appBar} ${classes[theme]}`}  position="fixed" elevation={0}>
         <Toolbar>
           <Link to="/">
             <div className={`logo-wrapper ${classes.logoWrapper}`}>
@@ -70,12 +71,12 @@ export default function PrimaryNavigation() {
               <Typography className={`logo-text ${classes.logoText}`} variant="h6" noWrap>
                 {organizationName}
               </Typography>
-              <Chip
+              {/*<Chip
                 className={`org-address ${classes.orgAddress}`}
                 size="small"
                 label={organizationAddress}
               />
-              <Balance />
+              <Balance />*/}
             </div>
           </Link>
         </Toolbar>
