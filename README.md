@@ -3,9 +3,9 @@
 <div align="center">
   <img src="docs/assets/gmedchain-logo/gmedchain.png" />
   <p>
-    We are providing healthcare supply chain solutions so more people have access to safe, affordable & efficient medical care 
+    We are providing healthcare supply chain solutions so more people have access to safe, affordable & efficient 
     <br/>
-    around the world. 
+    medical care around the world. 
   </p>
   <br/>
 </div>
