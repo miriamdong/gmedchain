@@ -12,9 +12,17 @@
 
 Lost supplies, fraudulent medicine, and supply chain confusion; in times like this, we understand medical equipment is a public resource, akin to the water we drink, the air we breathe, and the levels of freedom we should enjoy as a human right. To that end, visibility must be pervasive throughout the medical supply chain in order to better serve the public. 
 
-In developed countries, a complex medical infrastructure, while not perfect, props up medical providers that can be identified and trusted by consumers. In 3rd world countries, this is not the case - there is no clear way for consumers to identify whether vaccines and the providers they receive them from are worthy of being trusted.
+With more than 3 million cases of COVID-19 worldwide, hospitals around the world are struggling to obtain safe and reliable supplies. Frontline healthcare workers are running low on resources, with no medicine to help. 
 
-The widespread nature of the COVID-19 crisis means billions may have to be vaccinated. The days of being assured of vaccine safety because a UN or WHO representative in a white doctor’s coat is administering such a vaccine is over. Wide-spread vaccine distribution and administration need the support of a wide-spread, easy-to-understand, highly transparent supply chain beneficial to researchers, manufacturers, distributors, and consumers. That is __GMedChain__.
+According to WHO, the challenge as a health system is to get the right products, to the right places, in the right quantity and condition, at the right time, and at the right price. It is estimated that up to $200 billion worth of counterfeit pharmaceutical products are sold globally every year, according to the United Nations, up to US$2 trillion of procurement costs could be lost to corruption and fraud.
+
+In real life, this means vital services are delayed, much-needed equipment never reaches hospitals, critical infrastructure is never built, and people's lives and well-being are needlessly at risk.
+
+How do we improve this long and costly supply chain system so that more people can have timely access to better health services in both normal and difficult times? 
+
+
+
+That is __GMedChain__.
 
 # The platform
 
