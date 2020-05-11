@@ -3,9 +3,9 @@
 <div align="center">
   <img src="docs/assets/gmedchain-logo/gmedchain.png" />
   <p>
-    We are providing healthcare supplies access with the right product in the right quantity and condition, 
+    We are providing healthcare supply chain solutions so more people have access to safe, affordable & efficient medical care 
     <br/>
-    at the right price to patients at the right time and the right place around the world. 
+    around the world. 
   </p>
   <br/>
 </div>
@@ -14,7 +14,7 @@ Lost supplies, fraudulent medicine, and supply chain confusion; in times like th
 
 With more than 3 million cases of COVID-19 worldwide, hospitals around the world are struggling to obtain safe and reliable supplies. Frontline healthcare workers are running low on resources, with no medicine to help. 
 
-According to WHO, the challenge as a health system is to get the right products, to the right places, in the right quantity and condition, at the right time, and at the right price. It is estimated that up to $200 billion worth of counterfeit pharmaceutical products are sold globally every year, according to the United Nations, up to US$2 trillion of procurement costs could be lost to corruption and fraud.
+According to WHO, it is estimated that up to $200 billion worth of counterfeit pharmaceutical products are sold globally every year, according to the United Nations, up to US$2 trillion of procurement costs could be lost to corruption and fraud.
 
 In real life, this means vital services are delayed, much-needed equipment never reaches hospitals, critical infrastructure is never built, and people's lives and well-being are needlessly at risk.
 
