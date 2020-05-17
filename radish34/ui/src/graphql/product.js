@@ -1,12 +1,20 @@
 import gql from 'graphql-tag';
 
-//TODO
 export const PRODUCT_ATTRIBUTES = gql`
   fragment PRODUCT_ATTRIBUTES on Product {
     _id
     name
     desc
+    category
+    sku
+    availableQt
+    price
+    currency
     productAdditionDate
+    specs {
+      name
+      desc
+    }
   }
 `;
 
