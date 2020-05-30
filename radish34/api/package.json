@@ -27,6 +27,7 @@
     "validate": "npm run lint && npm run lint:md"
   },
   "dependencies": {
+    "@azure/cosmos": "^3.6.3",
     "apollo-server": "^2.11.0",
     "apollo-server-express": "^2.11.0",
     "axios": "^0.19.2",

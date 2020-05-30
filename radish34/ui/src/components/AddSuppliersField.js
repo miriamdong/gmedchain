@@ -44,7 +44,7 @@ const AddSuppliersField = ({ formik, suppliers }) => {
   const onTest = () => {
     // Do something
     
-    alert('pass');
+    //alert('pass');
   
   
   

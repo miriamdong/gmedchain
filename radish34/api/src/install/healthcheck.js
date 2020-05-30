@@ -35,7 +35,7 @@ export default async () => {
     console.log('All systems go.');
     state = 'ready';
   }
-
+  console.log("pasooooooooo"+state);
   await setServerState(state);
   const serverState = await getServerState();
   console.log('🏥  Healthcheck Status:', serverState);

@@ -52,6 +52,7 @@ const ChooseNetworkForm = () => {
       },
       fetchPolicy: 'no-cache',
     });
+    alert('PASOOOOOOOOOOO '  );
   };
 
   console.log('NETWORK FORM', { settings })

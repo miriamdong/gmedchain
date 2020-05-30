@@ -10,6 +10,7 @@ import { InMemoryCache } from 'apollo-cache-inmemory';
 import { ServerSettingsProvider } from './server-settings-context';
 import { PartnerProvider } from './partner-context';
 import { AddProductProvider } from './add-product-context';
+import { GetAllIotsProvider } from './iot-context';
 import { NoticeProvider } from './notice-context';
 import { RFPProvider } from './rfp-context';
 import { ProposalProvider } from './proposal-context';
@@ -65,11 +66,13 @@ function AppProviders({ children }) {
             <PartnerProvider>
               <RFPProvider>
                 <AddProductProvider>
-                  <ProposalProvider>
-                    <MSAProvider>
-                      <PurchaseOrderProvider>{children}</PurchaseOrderProvider>
-                    </MSAProvider>
-                  </ProposalProvider>
+                    <GetAllIotsProvider>
+                      <ProposalProvider>
+                        <MSAProvider>
+                          <PurchaseOrderProvider>{children}</PurchaseOrderProvider>
+                        </MSAProvider>
+                      </ProposalProvider>
+                    </GetAllIotsProvider>
                 </AddProductProvider>
               </RFPProvider>
             </PartnerProvider>

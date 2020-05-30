@@ -21,6 +21,8 @@ import RFPSchema from './schemas/rfp';
 import RFPResolver from './resolvers/rfp';
 import ProductResolver from './resolvers/product';
 import ProductSchema from './schemas/product';
+import IotResolver from './resolvers/iot';
+import IotSchema from './schemas/iot';
 import NoticeSchema from './schemas/notice';
 import NoticeResolver from './resolvers/notice';
 import ContractSchema from './schemas/contract';
@@ -46,11 +48,13 @@ const REST_PORT = process.env.REST_PORT || 8101;
 const typeDefs = [
   OrganizationSchema,
   ServerStatusSchema,
+  IotSchema,
   ScalarsSchema,
   ServerStateSchema,
   ServerSettingsSchema,
   RFPSchema,
   ProductSchema,
+
   PartnerSchema,
   NoticeSchema,
   ContractSchema,
@@ -69,6 +73,7 @@ const resolvers = [
   ServerSettingsResolver,
   RFPResolver,
   ProductResolver,
+  IotResolver,
   PartnerResolver,
   NoticeResolver,
   ContractResolver,

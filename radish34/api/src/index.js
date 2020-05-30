@@ -4,14 +4,18 @@ import { loadServerSettingsFromFile } from './utils/serverSettings';
 import { subscribeRegisterOrgEvent } from './services/event';
 import { saveOrganizations } from './services/organization';
 import { startEventFilter } from './services/merkle-tree';
-
+import comsos from './cosmos'
+/**
+ * Create the database if it does not exist
+ */
+console.log('asdasdsssssssssssssssssssssssssssssssssssssss')
 const main = async () => {
   try {
     // Setup
     await db.connect();
     await db.connectMongoose();
     await loadServerSettingsFromFile();
-
+     
     // Healthcheck
     startServer();
 

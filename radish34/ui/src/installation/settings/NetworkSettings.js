@@ -6,6 +6,7 @@ const NetworkSettings = () => {
   if (!settings || !settings.rpcProvider) {
     return <div>Error of some kind. plz fix.</div>
   }
+  //alert('Connected to the: ' + settings.rpcProvider);
   return <div>Connected to the {settings.rpcProvider}</div>;
 };
 
