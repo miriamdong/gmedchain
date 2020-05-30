@@ -11,12 +11,28 @@ const ProductSchema = new mongoose.Schema(
     },
     name: {
       type: String,
-      // For user reference. Likely generated from Product details
     },
     desc: {
       type: String,
-      // For user reference. Likely generated from Product details
     },
+    category: {
+      type: String,
+    },
+    sku: {
+      type: String,
+    },
+    availableQt: {
+      type: Number,
+    },
+    price: {
+      type: Number,
+    },
+    currency: {
+      type: String,
+    },
+    specs: [
+      { name: String, desc: String }
+    ],
     productAdditionDate: {
       type: Number
     }
