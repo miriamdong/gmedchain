@@ -69,7 +69,7 @@
     "js-cookie": "^2.2.1",
     "lodash": "^4.17.15",
     "material-ui": "^0.20.2",
-    "minimist": "1.2.0",
+    "minimist": "1.2.3",
     "moment": "^2.24.0",
     "node-sass": "^4.14.0",
     "notistack": "^0.9.9",
