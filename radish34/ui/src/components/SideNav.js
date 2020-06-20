@@ -19,14 +19,14 @@ const useStyles = makeStyles(() => ({
     background: '#404E67',
     height: '100vh',
     marginTop: '1rem',
-    color:"white"
+    color: 'white',
   },
   filterList: {
     marginTop: 0,
     paddingTop: 0,
     '.MuiFormControl-root': {
       margin: 0,
-    }
+    },
   },
   createNewButton: {
     border: '1px solid red',
@@ -97,14 +97,14 @@ const useStyles = makeStyles(() => ({
 
 const categories = [
   { label: 'RFPs', key: 'rfp', url: '/notices/rfp' },
-  { label: 'Proposals', key: 'proposal', url: '/notices/proposal'},
+  { label: 'Propuestas', key: 'proposal', url: '/notices/proposal' },
   {
-    label: 'Purchase Orders',
+    label: 'Ordenes de compra',
     key: 'po',
     url: '/notices/purchase-order',
   },
-  { label: 'Invoices', key: 'invoice', url: '/notices/invoice'},
-  { label: 'Dashboard', key: 'dashboard', url: '/dashboard'},
+  { label: 'Facturas', key: 'invoice', url: '/notices/invoice' },
+  { label: 'Tablero', key: 'dashboard', url: '/dashboard' },
   // { label: 'MSA', key: 'msa', url: '/notices/msa', icon: DescriptionIcon },
   // { label: "Procurement Requests", key: "procurementRequest", url: "/notices/procurementrequest", icon: LibraryBooksIcon },
 ];
@@ -122,10 +122,11 @@ const Category = ({ icon: Icon, label, items = [], name, url, selected }) => {
         activeClassName={classes.selected}
         isActive={() => selected}
       >
-        { Icon
-          ? <Icon className={classes.icon} />
-          : <div className={`${classes.dot} dot-${name}`} />
-        }
+        {Icon ? (
+          <Icon className={classes.icon} />
+        ) : (
+          <div className={`${classes.dot} dot-${name}`} />
+        )}
         <div className={classes.label}>{label}</div>
         <div className={classes.count}>{unresolved.length ? unresolved.length : null}</div>
       </NavLink>
@@ -157,12 +158,12 @@ const SideNav = ({ notices, selected }) => {
   const groups = groupBy(notices, 'category');
   const results = groupBy(notices, 'status');
   const createForms = [
-    { value: '/product/create', label: 'Add Product' },
-    { value: '/rfp/create', label: 'Create New RFP ' },
-    { value: '/purchase-order/create', label: 'Create New Purchase Order '},
+    { value: '/product/create', label: 'Añadir Producto' },
+    { value: '/rfp/create', label: 'Crear nueva solicitud de propuesta' },
+    { value: '/purchase-order/create', label: 'Crear nueva orden de compra' },
   ];
 
-  const dropdownOnChange = (e) => {
+  const dropdownOnChange = e => {
     setCreateForm(e.target.value);
     history.push(e.target.value);
   };
@@ -175,7 +176,7 @@ const SideNav = ({ notices, selected }) => {
   return (
     <div className={classes.root}>
       <List className={classes.filterList}>
-        {/*<DropDown className={classes.createNewButton} items={createForms} onChange={dropdownOnChange} value={createForm} />*/}
+        {/* <DropDown className={classes.createNewButton} items={createForms} onChange={dropdownOnChange} value={createForm} /> */}
         <Category icon={Inbox} label="Inbox" category={results.incoming} url="/notices/inbox" />
         <Category icon={Send} label="Outbox" category={results.outgoing} url="/notices/outbox" />
       </List>
@@ -199,9 +200,9 @@ const SideNav = ({ notices, selected }) => {
       <Divider />
 
       <List className={classes.filterList}>
-        <Category label="Products" url="/products" />
-        <Category label="Partners" url="/partners" />
-        <Category items={groups.msa} label="Contracts" url="/notices/contracts" />
+        <Category label="Productos" url="/products" />
+        <Category label="Socios" url="/partners" />
+        <Category items={groups.msa} label="Contratos" url="/notices/contracts" />
       </List>
     </div>
   );

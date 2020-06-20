@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   selected: {
     boxShadow: '0 3px 5px 2px #28D295',
   },
-  invalidAmount : {
+  invalidAmount: {
     boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   },
   checkCircleOutline: {
@@ -33,43 +33,56 @@ const useStyles = makeStyles({
 
 const MSACard = ({ msa, price, onClick, selected, volume }) => {
   const classes = useStyles();
-  const normalise = (value, min, max) => (value - min) * 100 / (max - min);
+  const normalise = (value, min, max) => ((value - min) * 100) / (max - min);
   const latestCommitment = msa.commitments[msa.commitments.length - 1];
-  const accumulatedVolumeOrdered = latestCommitment.variables.accumulatedVolumeOrdered;
+  const { accumulatedVolumeOrdered } = latestCommitment.variables;
   const valueForNormalise = () => {
     if (volume && !accumulatedVolumeOrdered) return volume;
     if (!volume && accumulatedVolumeOrdered) return accumulatedVolumeOrdered;
     if (volume && accumulatedVolumeOrdered) return volume + accumulatedVolumeOrdered;
-    else return 0;
+    return 0;
   };
-  const linearProgressValue = normalise(valueForNormalise(), msa.tierBounds[0], msa.tierBounds[msa.tierBounds.length - 1]);
-  const invalidAmount = volume ? volume + accumulatedVolumeOrdered > msa.tierBounds[msa.tierBounds.length - 1] : false;
+  const linearProgressValue = normalise(
+    valueForNormalise(),
+    msa.tierBounds[0],
+    msa.tierBounds[msa.tierBounds.length - 1],
+  );
+  const invalidAmount = volume
+    ? volume + accumulatedVolumeOrdered > msa.tierBounds[msa.tierBounds.length - 1]
+    : false;
 
   return (
-    <Card className={clsx(classes.root, {
-      [classes.selected]: selected,
-      [classes.invalidAmount]: invalidAmount || latestCommitment.index === null,
-    })}>
+    <Card
+      className={clsx(classes.root, {
+        [classes.selected]: selected,
+        [classes.invalidAmount]: invalidAmount || latestCommitment.index === null,
+      })}
+    >
       <CardActionArea onClick={onClick} disabled={latestCommitment.index === null}>
         <CardContent>
-          {latestCommitment.index === null && <Typography variant="body2" color="error">Latest commitment not stored in shield contract yet, cannot create PO for this MSA</Typography>}
-          <Typography>{msa.supplierDetails.name}</Typography>
-          <Typography>MSA for SKU: {msa.sku}</Typography>
-          {latestCommitment.index === null ? (
-            <Typography>
-              Contract Status - Pending
+          {latestCommitment.index === null && (
+            <Typography variant="body2" color="error">
+              El último compromiso aún no está almacenado en el contrato de escudo, no se puede
+              crear PO para este MSA
             </Typography>
+          )}
+          <Typography>{msa.supplierDetails.name}</Typography>
+          <Typography>MSA para SKU: {msa.sku}</Typography>
+          {latestCommitment.index === null ? (
+            <Typography>Estado del contrato: pendiente</Typography>
           ) : (
             <Typography>
-              Contract Status - Active
+              Estado del contrato - Activo
               <CheckCircleOutline className={classes.checkCircleOutline} />
             </Typography>
           )}
           <LinearProgress variant="determinate" value={linearProgressValue} />
-          <Typography>{`${valueForNormalise()}/${msa.tierBounds[msa.tierBounds.length - 1]}`}</Typography>
+          <Typography>{`${valueForNormalise()}/${
+            msa.tierBounds[msa.tierBounds.length - 1]
+          }`}</Typography>
         </CardContent>
-        <CardContent style={{ background: "#EAF4FF", maxWidth: 345, height: 100 }}>
-          <Typography>ESTIMATED COST FOR ORDER</Typography>
+        <CardContent style={{ background: '#EAF4FF', maxWidth: 345, height: 100 }}>
+          <Typography>COSTO ESTIMADO POR PEDIDO</Typography>
           <Typography variant="h2">{formatCurrency(price)}</Typography>
         </CardContent>
       </CardActionArea>

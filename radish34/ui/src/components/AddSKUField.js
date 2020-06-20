@@ -51,71 +51,68 @@ const AddSKUField = ({ formik, volumeField = false, displayOverride }) => {
         </TableRow>
       </TableHead>
       <TableBody>
-        {display || displayOverride ?
-        <TableRow>
-        <TableCell>
-          <Field
-            id="sku"
-            component={TextField}
-            onChange={formik.handleChange}
-            disabled={disabled}
-            className={classes.field}
-            value={formik.values.sku}
-          />
-        </TableCell>
-        <TableCell>
-          {volumeField ?
-            <Field
-              id="volume"
-              component={TextField}
-              onChange={formik.handleChange}
-              disabled={disabled}
-              className={classes.field}
-              value={formik.values.volume}
-            />
-            :
-            <Field
-              id="skuDescription"
-              component={TextField}
-              onChange={formik.handleChange}
-              disabled={disabled}
-              className={classes.field}
-            />
-          }
-        </TableCell>
-        <TableCell className={classes.tableCellButton}>
-          {!disabled ? (
-            <Button
-              type="button"
-              onClick={() => setDisabled(true)}
-              disabled={formik.values.sku === ''}
-            >
-              ADD
-            </Button>
-          ) : (
-            <Button type="button" onClick={() => setDisabled(false)}>
-              EDIT
-            </Button>
-          )}
-          <Button
-            type="button"
-            onClick={() => setDisplay(false)}
-          >
-            Remove
-          </Button>
-        </TableCell>
-      </TableRow>
-        : 
-        <TableRow>
-          <TableCell className={classes.borderlessTableCell}>
-            <Button className={classes.button} type="button" onClick={() => setDisplay(true)}>
-              <Add className={classes.icon} />
-              Add Item
-            </Button>
-          </TableCell>
-        </TableRow>
-        }
-        {Object.keys(formik.errors).length > 0 &&
+        {display || displayOverride ? (
+          <TableRow>
+            <TableCell>
+              <Field
+                id="sku"
+                component={TextField}
+                onChange={formik.handleChange}
+                disabled={disabled}
+                className={classes.field}
+                value={formik.values.sku}
+              />
+            </TableCell>
+            <TableCell>
+              {volumeField ? (
+                <Field
+                  id="volume"
+                  component={TextField}
+                  onChange={formik.handleChange}
+                  disabled={disabled}
+                  className={classes.field}
+                  value={formik.values.volume}
+                />
+              ) : (
+                <Field
+                  id="skuDescription"
+                  component={TextField}
+                  onChange={formik.handleChange}
+                  disabled={disabled}
+                  className={classes.field}
+                />
+              )}
+            </TableCell>
+            <TableCell className={classes.tableCellButton}>
+              {!disabled ? (
+                <Button
+                  type="button"
+                  onClick={() => setDisabled(true)}
+                  disabled={formik.values.sku === ''}
+                >
+                  AÑADIR
+                </Button>
+              ) : (
+                <Button type="button" onClick={() => setDisabled(false)}>
+                  EDITAR
+                </Button>
+              )}
+              <Button type="button" onClick={() => setDisplay(false)}>
+                Eliminar
+              </Button>
+            </TableCell>
+          </TableRow>
+        ) : (
+          <TableRow>
+            <TableCell className={classes.borderlessTableCell}>
+              <Button className={classes.button} type="button" onClick={() => setDisplay(true)}>
+                <Add className={classes.icon} />
+                Añadir artículo
+              </Button>
+            </TableCell>
+          </TableRow>
+        )}
+        {Object.keys(formik.errors).length > 0 && (
           <TableRow>
             <TableCell className={classes.borderlessTableCell}>
               <ErrorMessage
@@ -130,7 +127,7 @@ const AddSKUField = ({ formik, volumeField = false, displayOverride }) => {
               />
             </TableCell>
           </TableRow>
-        }
+        )}
       </TableBody>
     </Table>
   );

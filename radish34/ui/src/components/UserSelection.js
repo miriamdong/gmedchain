@@ -29,7 +29,8 @@ const useStyles = makeStyles(() => ({
 const UserSelection = () => {
   const classes = useStyles();
   const [data, setData] = useState({ status: 504 });
-  const apiURL = window.localStorage.getItem('api') || 'baseline.southcentralus.cloudapp.azure.com:8001/graphql';
+  const apiURL =
+    window.localStorage.getItem('api') || 'baseline.southcentralus.cloudapp.azure.com:8001/graphql';
   const user = window.localStorage.getItem('username') || 'Org1';
   const { settings } = useContext(ServerSettingsContext);
   const { organizationAddress } = settings || {};
@@ -66,9 +67,9 @@ const UserSelection = () => {
   return (
     <div className={classes.root}>
       <Select className={classes.userSelection} value={user} onChange={handleChange}>
-        <MenuItem value="Org1">Buyer</MenuItem>
-        <MenuItem value="Supplier1">Supplier1</MenuItem>
-        <MenuItem value="Supplier2">Supplier2</MenuItem>
+        <MenuItem value="Org1">Comprador</MenuItem>
+        <MenuItem value="Supplier1">Proveedor 1</MenuItem>
+        <MenuItem value="Supplier2">Proveedor 2</MenuItem>
       </Select>
     </div>
   );

@@ -157,11 +157,11 @@ const PartnerTable = ({ partners, myPartners, deletePartner, postPartner }) => {
 
   return (
     <>
-      <Typography variant="h4">Registry</Typography>
+      <Typography variant="h4">Registro</Typography>
       <div className={classes.filter}>
         <TextField
           id="standard-dense"
-          label="Search by Company"
+          label="Buscar por empresa"
           className={classes.textField}
           margin="normal"
           onChange={event => setCurrentInput(event.target.value)}
@@ -170,7 +170,7 @@ const PartnerTable = ({ partners, myPartners, deletePartner, postPartner }) => {
         <TextField
           id="outlined-select-role"
           select
-          label="Sort By Role"
+          label="Ordenar por rol"
           className={classes.textField}
           value={filterOption}
           onChange={handleRoleChange}
@@ -179,7 +179,7 @@ const PartnerTable = ({ partners, myPartners, deletePartner, postPartner }) => {
               className: classes.menu,
             },
           }}
-          helperText="Please select filter option"
+          helperText="Por favor seleccione la opción de filtro"
           margin="normal"
         >
           {roles.map(role => (

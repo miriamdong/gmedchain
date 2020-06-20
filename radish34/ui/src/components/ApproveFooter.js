@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
   footerText: {
     marginLeft: '.5rem',
-  }
+  },
 }));
 
 const ApproveFooter = ({ onClick, footerText, buttonText }) => {
@@ -29,7 +29,9 @@ const ApproveFooter = ({ onClick, footerText, buttonText }) => {
   return (
     <div className={classes.footer}>
       <Typography className={classes.footerText}>{footerText}</Typography>
-      <Button className={classes.button} onClick={onClick}>{buttonText}</Button>
+      <Button className={classes.button} onClick={onClick}>
+        {buttonText}
+      </Button>
     </div>
   );
 };
@@ -41,8 +43,9 @@ ApproveFooter.propTypes = {
 };
 
 ApproveFooter.defaultProps = {
-  footerText: "By selecting 'I Approve', I am agreeing to the Terms & Conditions stated here and ...",
-  buttonText: "I Approve",
+  footerText:
+    "Al seleccionar 'Yo apruebo', estoy aceptando los Términos y Condiciones aquí expuestos y ...",
+  buttonText: 'Apruebo',
 };
 
 export default ApproveFooter;

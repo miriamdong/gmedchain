@@ -11,6 +11,6 @@ export const scope = 'app.components.Pricing';
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'This is the Pricing component!',
+    defaultMessage: 'Este es el componente de precios!',
   },
 });

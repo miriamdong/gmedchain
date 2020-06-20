@@ -3,24 +3,24 @@ import { defineMessages } from 'react-intl';
 export const scope = 'app.components.Hero';
 
 export default defineMessages({
-    SolveBusinessChallengeswith: {
-        id: `${scope}.SolveBusinessChallengeswith`,
-        defaultMessage: 'Solve Business Challenges with',
-    },
-    InnovativeTechnologies: {
-        id: `${scope}.InnovativeTechnologies`,
-        defaultMessage: 'Innovative Technologies',
-    },
-    RoiSolution: {
-        id: `${scope}.RoiSolution`,
-        defaultMessage: 'Roi Solution',
-    },
-    SoftwareCreator: {
-        id: `${scope}.SoftwareCreator`,
-        defaultMessage: 'Software Creator',
-    },
-    details: {
-        id: `${scope}.details`,
-        defaultMessage: 'Voice and Data Systems are crucial to the success or failure',
-    },
+  SolveBusinessChallengeswith: {
+    id: `${scope}.SolveBusinessChallengeswith`,
+    defaultMessage: 'Resuelva desafíos comerciales con',
+  },
+  InnovativeTechnologies: {
+    id: `${scope}.InnovativeTechnologies`,
+    defaultMessage: 'Tecnologías innovadoras',
+  },
+  RoiSolution: {
+    id: `${scope}.RoiSolution`,
+    defaultMessage: 'Solución Roi',
+  },
+  SoftwareCreator: {
+    id: `${scope}.SoftwareCreator`,
+    defaultMessage: 'Creador de software',
+  },
+  details: {
+    id: `${scope}.details`,
+    defaultMessage: 'Los sistemas de voz y datos son cruciales para el éxito o el fracaso',
+  },
 });

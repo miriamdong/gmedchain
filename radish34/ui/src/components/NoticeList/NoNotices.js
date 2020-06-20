@@ -24,25 +24,31 @@ const useStyles = makeStyles(() => ({
   buttonWrapper: {
     margin: '2rem',
   },
-  button: {
-  },
-  welcomeImage: {
-  },
+  button: {},
+  welcomeImage: {},
 }));
 
 const NoNotices = () => {
   const classes = useStyles();
 
   return (
-  <div className={classes.root}>
-    <Typography variant="h4" className={classes.welcome}>GMedChain</Typography>
-    <Typography variant="h3" className={classes.intro}>Some text here to get users motivated to start using the application.</Typography>
-    <Typography variant="h5" className={classes.calltoAction}>Let's get started by connecting to partners</Typography>
-    <div className={classes.buttonWrapper}>
-      <Button variant="contained" color="primary" className={classes.button}>View Registry</Button>
+    <div className={classes.root}>
+      <Typography variant="h4" className={classes.welcome}>
+        GMedChain
+      </Typography>
+      <Typography variant="h3" className={classes.intro}>
+        Algunos textos aquí para motivar a los usuarios a comenzar a usar la aplicación.
+      </Typography>
+      <Typography variant="h5" className={classes.calltoAction}>
+        Comencemos conectándonos con socios
+      </Typography>
+      <div className={classes.buttonWrapper}>
+        <Button variant="contained" color="primary" className={classes.button}>
+          Ver registro
+        </Button>
+      </div>
+      <img className={classes.welcomeImage} src={WelcomeImage} alt="Bienvenido a Radish" />
     </div>
-    <img className={classes.welcomeImage} src={WelcomeImage} alt="Welcome to Radish" />
-  </div>
   );
 };
 

@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => ({
   tableCell: {
     borderBottom: 'none',
     padding: 0,
-    marginBottom: '2rem'
+    marginBottom: '2rem',
   },
   tableCellButton: {
     borderTop: '1px solid rgba(224, 224, 224, 1)',
@@ -42,8 +42,8 @@ const AddSpecField = ({ formik }) => {
     <Table className={classes.table}>
       <TableHead>
         <TableRow>
-          <TableCell>Specification name</TableCell>
-          <TableCell>Description</TableCell>
+          <TableCell>Nombre de la especificación</TableCell>
+          <TableCell>Descripción</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -51,81 +51,84 @@ const AddSpecField = ({ formik }) => {
           name="specs"
           render={arrayHelpers => (
             <>
-              {
-                formik.values.specs.map((spec, index) => (
-                  <React.Fragment key={index}>
-                    <TableRow>
-                      <TableCell>
-                        <Field
-                          name={`specs.${index}.name`}
-                          component={TextField}
-                          onChange={formik.handleChange}
-                          disabled={disabled[index]}
-                          className={classes.field}
-                          value={spec.name || ''}
-                        />
-                      </TableCell>
-                      <TableCell>
-                        <Field
-                          name={`specs.${index}.desc`}
-                          component={TextField}
-                          onChange={formik.handleChange}
-                          disabled={disabled[index]}
-                          className={classes.field}
-                          value={spec.desc || ''}
-                        />
-                      </TableCell>
-                      <TableCell className={index === 0 ? classes.tableCellButton : undefined}>
+              {formik.values.specs.map((spec, index) => (
+                <React.Fragment key={index}>
+                  <TableRow>
+                    <TableCell>
+                      <Field
+                        name={`specs.${index}.name`}
+                        component={TextField}
+                        onChange={formik.handleChange}
+                        disabled={disabled[index]}
+                        className={classes.field}
+                        value={spec.name || ''}
+                      />
+                    </TableCell>
+                    <TableCell>
+                      <Field
+                        name={`specs.${index}.desc`}
+                        component={TextField}
+                        onChange={formik.handleChange}
+                        disabled={disabled[index]}
+                        className={classes.field}
+                        value={spec.desc || ''}
+                      />
+                    </TableCell>
+                    <TableCell className={index === 0 ? classes.tableCellButton : undefined}>
+                      <Button
+                        type="button"
+                        onClick={() => {
+                          setDisabled({ ...disabled, [index]: false });
+                          arrayHelpers.remove(index);
+                        }}
+                      >
+                        REMOVER
+                      </Button>
+                      {!disabled[index] ? (
                         <Button
                           type="button"
                           onClick={() => {
-                            setDisabled({ ...disabled, [index]: false });
-                            arrayHelpers.remove(index);
+                            if (
+                              formik.values.specs[index].name &&
+                              formik.values.specs[index].desc
+                            ) {
+                              setDisabled({ ...disabled, [index]: true });
+                            }
                           }}
                         >
-                          REMOVE
+                          AÑADIR
                         </Button>
-                        {!disabled[index] ? (
-                          <Button
-                            type="button"
-                            onClick={() => {
-                              if (
-                                formik.values.specs[index].name &&
-                                formik.values.specs[index].desc
-                              ) {
-                                setDisabled({ ...disabled, [index]: true });
-                              }
-                            }}
-                          >
-                            ADD
-                          </Button>
-                        ) : (
-                          <Button
-                            type="button"
-                            onClick={() => setDisabled({ ...disabled, [index]: false })}
-                          >
-                            EDIT
-                          </Button>
+                      ) : (
+                        <Button
+                          type="button"
+                          onClick={() => setDisabled({ ...disabled, [index]: false })}
+                        >
+                          EDITAR
+                        </Button>
+                      )}
+                    </TableCell>
+                  </TableRow>
+                  <TableRow>
+                    <TableCell className={classes.tableCell}>
+                      <ErrorMessage
+                        name={`specs.${index}.name`}
+                        render={msg => (
+                          <Typography className={classes.errorMessage}>{msg}</Typography>
                         )}
-                      </TableCell>
-                    </TableRow>
-                    <TableRow>
-                      <TableCell className={classes.tableCell}>
-                        <ErrorMessage
-                          name={`specs.${index}.name`}
-                          render={msg => <Typography className={classes.errorMessage}>{msg}</Typography>}
-                        />
-                      </TableCell>
-                      <TableCell className={classes.tableCell}>
-                        <ErrorMessage
-                          name={`specs.${index}.desc`}
-                          render={msg => <Typography className={classes.errorMessage}>{msg}</Typography>}
-                        />
-                      </TableCell>
-                    </TableRow>
-                  </React.Fragment>
-                ))}
-              {(
+                      />
+                    </TableCell>
+                    <TableCell className={classes.tableCell}>
+                      <ErrorMessage
+                        name={`specs.${index}.desc`}
+                        render={msg => (
+                          <Typography className={classes.errorMessage}>{msg}</Typography>
+                        )}
+                      />
+                    </TableCell>
+                  </TableRow>
+                </React.Fragment>
+              ))}
+              {
                 <TableRow>
                   <TableCell className={classes.tableCell}>
                     <Button
@@ -134,16 +137,20 @@ const AddSpecField = ({ formik }) => {
                       style={{ color: '#50A75D' }}
                     >
                       <AddCircleOutline />
-                      Add specification
+                      Agregar especificación
                     </Button>
                   </TableCell>
                 </TableRow>
-              )}
+              }
               <TableRow>
                 <TableCell className={classes.tableCell}>
                   <ErrorMessage
                     name="specs"
-                    render={error => !Array.isArray(error) && <Typography className={classes.errorMessage}>{error}</Typography>}
+                    render={error =>
+                      !Array.isArray(error) && (
+                        <Typography className={classes.errorMessage}>{error}</Typography>
+                      )
+                    }
                   />
                 </TableCell>
               </TableRow>

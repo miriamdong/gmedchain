@@ -44,22 +44,24 @@ const ProposalForm = ({ rfp }) => {
   const [contractAddress, setContractAddress] = useState('');
   const { postProposal } = useContext(ProposalContext);
 
-  const erc20contracts = [{
-    value: '',
-    label: 'Select payment token'
-  },
-  {
-    value: '0x1234',
-    label: 'USD',
-  },
-  {
-    value: '0x3451',
-    label: 'GBP',
-  },
-  {
-    value: '0x4562',
-    label: 'EUR',
-  }];
+  const erc20contracts = [
+    {
+      value: '',
+      label: 'Seleccionar Token de pago',
+    },
+    {
+      value: '0x1234',
+      label: 'USD',
+    },
+    {
+      value: '0x3451',
+      label: 'GBP',
+    },
+    {
+      value: '0x4562',
+      label: 'EUR',
+    },
+  ];
 
   const formik = useFormik({
     initialValues: {
@@ -78,8 +80,8 @@ const ProposalForm = ({ rfp }) => {
           .of(
             Yup.object().shape({
               endRange: Yup.number()
-                .required('Volume required')
-                .min(1, 'Volume must be at least 1')
+                .required('Volumen requerido')
+                .min(1, 'El volumen debe ser al menos 1')
                 .test({
                   name: 'volume-amount-test',
                   test: item => {
@@ -89,14 +91,14 @@ const ProposalForm = ({ rfp }) => {
                     const prevItem = values.rates[index - 1];
                     return prevItem ? prevItem.endRange < item : true;
                   },
-                  message: 'Max volume must be higher than previous row',
+                  message: 'El volumen máximo debe ser mayor que el de la fila anterior',
                   exclusive: false,
                 }),
-              price: Yup.number().required('Price Required'),
+              price: Yup.number().required('Precio requerido'),
             }),
           )
-          .min(1, 'Must add at least 1 rate'),
-          erc20ContractAddress: Yup.string().required('Token type required'),
+          .min(1, 'Debe añadir al menos 1 tarifa'),
+        erc20ContractAddress: Yup.string().required('Se requiere el tipo Token'),
       });
     }),
   });
@@ -107,10 +109,10 @@ const ProposalForm = ({ rfp }) => {
         <Table className={classes.table}>
           <TableHead>
             <TableRow>
-              <TableCell>Volume</TableCell>
-              <TableCell>Price</TableCell>
-              <TableCell>Payment Token</TableCell>
-              <TableCell>Unit of Measure</TableCell>
+              <TableCell>Volumen</TableCell>
+              <TableCell>Precio</TableCell>
+              <TableCell>Token de Pago</TableCell>
+              <TableCell>Unidad de medida</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -158,13 +160,13 @@ const ProposalForm = ({ rfp }) => {
                           </TableCell>
                           <TableCell>
                             <Field
-                              name='erc20ContractAddress'
+                              name="erc20ContractAddress"
                               component={DropDown}
                               disabled={disabled[index]}
                               className={classes.field}
                               type="string"
                               items={erc20contracts}
-                              onChange={(e) => {
+                              onChange={e => {
                                 setContractAddress(e.target.value);
                                 formik.handleChange(e);
                               }}
@@ -178,7 +180,7 @@ const ProposalForm = ({ rfp }) => {
                               onChange={formik.handleChange}
                               disabled
                               className={classes.field}
-                              value="Price Per Unit"
+                              value="Precio por Unidad"
                               type="text"
                             />
                           </TableCell>
@@ -190,7 +192,7 @@ const ProposalForm = ({ rfp }) => {
                                 arrayHelpers.remove(index);
                               }}
                             >
-                              REMOVE
+                              REMOVER
                             </Button>
                             {!disabled[index] ? (
                               <Button
@@ -203,19 +205,19 @@ const ProposalForm = ({ rfp }) => {
                                     setDisabled({ ...disabled, [index]: true });
                                     formik.setFieldValue(
                                       `rates.${index}.unitOfMeasure`,
-                                      'Price Per Unit',
+                                      'Precio por Unidad',
                                     );
                                   }
                                 }}
                               >
-                                ADD
+                                AGREGAR
                               </Button>
                             ) : (
                               <Button
                                 type="button"
                                 onClick={() => setDisabled({ ...disabled, [index]: false })}
                               >
-                                EDIT
+                                EDITAR
                               </Button>
                             )}
                           </TableCell>
@@ -224,20 +226,26 @@ const ProposalForm = ({ rfp }) => {
                           <TableCell className={classes.tableCell}>
                             <ErrorMessage
                               name={`rates.${index}.endRange`}
-                              render={msg => <Typography className={classes.errorMessage}>{msg}</Typography>}
+                              render={msg => (
+                                <Typography className={classes.errorMessage}>{msg}</Typography>
+                              )}
                             />
                           </TableCell>
                           <TableCell className={classes.tableCell}>
                             <ErrorMessage
                               name={`rates.${index}.price`}
-                              render={msg => <Typography className={classes.errorMessage}>{msg}</Typography>}
+                              render={msg => (
+                                <Typography className={classes.errorMessage}>{msg}</Typography>
+                              )}
                             />
                           </TableCell>
                           <TableCell className={classes.tableCell}>
                             <ErrorMessage
-                                name='erc20ContractAddress'
-                                render={msg => <Typography className={classes.errorMessage}>{msg}</Typography>}
-                              />
+                              name="erc20ContractAddress"
+                              render={msg => (
+                                <Typography className={classes.errorMessage}>{msg}</Typography>
+                              )}
+                            />
                           </TableCell>
                         </TableRow>
                       </React.Fragment>
@@ -251,7 +259,7 @@ const ProposalForm = ({ rfp }) => {
                           style={{ color: '#50A75D' }}
                         >
                           <AddCircleOutline />
-                          Add Tier
+                          Agregar Nivel
                         </Button>
                       </TableCell>
                     </TableRow>
@@ -260,7 +268,11 @@ const ProposalForm = ({ rfp }) => {
                     <TableCell className={classes.tableCell}>
                       <ErrorMessage
                         name="rates"
-                        render={error => !Array.isArray(error) && <Typography className={classes.errorMessage}>{error}</Typography>}
+                        render={error =>
+                          !Array.isArray(error) && (
+                            <Typography className={classes.errorMessage}>{error}</Typography>
+                          )
+                        }
                       />
                     </TableCell>
                   </TableRow>
@@ -271,7 +283,9 @@ const ProposalForm = ({ rfp }) => {
         </Table>
         <Grid container direction="column">
           <Grid item>
-            <Button style={{ marginTop: '.5rem' }} className="btn mb-25" type="submit">Send Proposal</Button>
+            <Button style={{ marginTop: '.5rem' }} className="btn mb-25" type="submit">
+              Enviar Propuesta
+            </Button>
           </Grid>
         </Grid>
       </form>

@@ -23,24 +23,23 @@ import Analytics from './pages/Analytics';
 import { ServerSettingsContext } from './contexts/server-settings-context';
 import ProductDetails from './components/ProductDetails';
 import CreateRFP from './pages/CreateRFP';
-import PriceLanding from './components/PriceLanding/Loadable'
-import {IotContext} from './contexts/iot-context';
-
+import PriceLanding from './components/PriceLanding/Loadable';
+import { IotContext } from './contexts/iot-context';
 
 const App = () => {
   const { state, loading } = useContext(ServerSettingsContext);
   const { iots } = useContext(IotContext);
-  if(iots[0]){
-    console.log('kawasaki-----' + iots[0].id)
+  if (iots[0]) {
+    console.log(`kawasaki-----${iots[0].id}`);
   }
 
-  alert(iots[0])
+  // alert(iots[0])
   return useMemo(() => {
     if (loading && !state) {
       return <Loading />;
     }
 
-     if (state !== 'ready') {
+    if (state !== 'ready') {
       return <Installation state={state} />;
     }
     return (

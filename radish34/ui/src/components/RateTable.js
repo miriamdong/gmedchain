@@ -13,14 +13,14 @@ import { formatCurrency } from '../utils';
 const RateTable = ({ rates, erc20ContractAddress }) => {
   return (
     <>
-      <Typography variant="h3">Pricing</Typography>
+      <Typography variant="h3">Precios</Typography>
       <Table style={{ margin: '2rem 0 2rem 0' }}>
         <TableHead>
           <TableRow>
-            <TableCell>Volume</TableCell>
-            <TableCell>Price</TableCell>
-            <TableCell>Payment Token</TableCell>
-            <TableCell>Unit Of Measure</TableCell>
+            <TableCell>Volumen</TableCell>
+            <TableCell>Precio</TableCell>
+            <TableCell>Token de Pago</TableCell>
+            <TableCell>Unidad de medida</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

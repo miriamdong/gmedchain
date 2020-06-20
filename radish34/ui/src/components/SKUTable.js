@@ -12,8 +12,8 @@ const SKUTable = ({ sku, description, volume }) => {
       <TableHead>
         <TableRow>
           <TableCell>SKU</TableCell>
-          {description && <TableCell>Description</TableCell>}
-          {volume && <TableCell>Volume</TableCell>}
+          {description && <TableCell>Descripción</TableCell>}
+          {volume && <TableCell>Volumen</TableCell>}
         </TableRow>
       </TableHead>
       <TableBody>

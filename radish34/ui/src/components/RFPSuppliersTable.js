@@ -15,17 +15,15 @@ import { formatCurrency } from '../utils';
 const RFPSuppliersTable = ({ rfp, proposals, setOpen, open, createContract }) => {
   return (
     <>
-      <Typography variant="h2">
-        Suppliers
-      </Typography>
+      <Typography variant="h2">Proveedores</Typography>
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>Supplier</TableCell>
-            <TableCell>Status</TableCell>
-            <TableCell>Volume</TableCell>
-            <TableCell>Price Per Unit</TableCell>
-            <TableCell>Payment Token</TableCell>
+            <TableCell>Proveedor</TableCell>
+            <TableCell>Estado</TableCell>
+            <TableCell>Volumen</TableCell>
+            <TableCell>Precio por unidad</TableCell>
+            <TableCell>Token de pago</TableCell>
             <TableCell />
           </TableRow>
         </TableHead>
@@ -36,19 +34,19 @@ const RFPSuppliersTable = ({ rfp, proposals, setOpen, open, createContract }) =>
                 <TableCell>{proposal.partner.name}</TableCell>
                 <TableCell>
                   {/* {proposal.receiptDate ? `Sent: ${proposal.receiptDate}` : 'Pending'} */}
-                  Sent
+                  Enviado
                 </TableCell>
                 <TableCell>
                   {proposal.rates ? (
                     proposal.rates.map((rate, i) => (
                       <Typography key={uniqid()}>
-                        {`${i === 0 ? rate.startRange + 1 : rate.startRange}-${rate.endRange}${proposal.rates[i + 1] ? '' : '+'}`}
+                        {`${i === 0 ? rate.startRange + 1 : rate.startRange}-${rate.endRange}${
+                          proposal.rates[i + 1] ? '' : '+'
+                        }`}
                       </Typography>
                     ))
                   ) : (
-                    <Typography>
-                      N/A
-                    </Typography>
+                    <Typography>N/A</Typography>
                   )}
                 </TableCell>
                 <TableCell>
@@ -70,15 +68,17 @@ const RFPSuppliersTable = ({ rfp, proposals, setOpen, open, createContract }) =>
                 <TableCell>
                   {proposal.rates &&
                     (proposal.msaId ? (
-                      <Link to={`/contracts/${proposal.msaId}`} underline={"hover"}>View Contract</Link>
+                      <Link to={`/contracts/${proposal.msaId}`} underline="hover">
+                        Ver Contrato
+                      </Link>
                     ) : (
                       <Button
                         variant="contained"
-                        style={{ 'font-size': '13px'}}
+                        style={{ 'font-size': '13px' }}
                         className="btn"
                         onClick={() => setOpen({ [index]: true })}
                       >
-                        Create Contract
+                        Crear contrato
                       </Button>
                     ))}
                 </TableCell>

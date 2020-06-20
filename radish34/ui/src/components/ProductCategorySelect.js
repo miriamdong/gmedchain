@@ -10,49 +10,51 @@ import Typography from '@material-ui/core/Typography';
 import { ErrorMessage } from 'formik';
 
 const useStyles = makeStyles(() => ({
-    formControl: {
-        width: '100%',
-        marginBottom: '1rem',
-    },
-    errorMessage: {
-        color: 'red',
-        marginTop: '16px'
-      },
+  formControl: {
+    width: '100%',
+    marginBottom: '1rem',
+  },
+  errorMessage: {
+    color: 'red',
+    marginTop: '16px',
+  },
 }));
 
-const ProductCategorySelect = ({formik}) => {
+const ProductCategorySelect = ({ formik }) => {
   const classes = useStyles();
 
-  return <FormControl className={classes.formControl}> 
-        <InputLabel htmlFor="category">Category</InputLabel>
-        <Select 
-            defaultValue=""
-            id="grouped-select"
-            label="Category"
-            onChange={formik.handleChange}
-            value={formik.values.category}
-            name="category"
-        >
-            <ListSubheader>PPE</ListSubheader>
-            <MenuItem value={"ppe/gloves"}>Gloves</MenuItem>
-            <MenuItem value={"ppe/mask"}>Masks</MenuItem>
-            <MenuItem value={"ppe/eyeprotection"}>Eye protection</MenuItem>
-            <MenuItem value={"ppe/handsanitizer"}>Hand sanitizer</MenuItem>
-            <MenuItem value={"ppe/gowns"}>Gowns</MenuItem>
-            <MenuItem value={"ppe/coveralls"}>Coveralls</MenuItem>
-            <ListSubheader>Drugs</ListSubheader>
-            <MenuItem value={"drugs/drugs"}>Drugs</MenuItem>
-        </Select>
+  return (
+    <FormControl className={classes.formControl}>
+      <InputLabel htmlFor="category">Categoría</InputLabel>
+      <Select
+        defaultValue=""
+        id="grouped-select"
+        label="Categoría"
+        onChange={formik.handleChange}
+        value={formik.values.category}
+        name="category"
+      >
+        <ListSubheader>PPE</ListSubheader>
+        <MenuItem value="ppe/gloves">Guantes</MenuItem>
+        <MenuItem value="ppe/mask">Máscaras</MenuItem>
+        <MenuItem value="ppe/eyeprotection">Protección de los ojos</MenuItem>
+        <MenuItem value="ppe/handsanitizer">Desinfectante de manos</MenuItem>
+        <MenuItem value="ppe/gowns">Vestidos</MenuItem>
+        <MenuItem value="ppe/coveralls">Overoles</MenuItem>
+        <ListSubheader>Drogas</ListSubheader>
+        <MenuItem value="drugs/drugs">Drogas</MenuItem>
+      </Select>
 
-        <ErrorMessage
-            name="category"
-            render={msg => <Typography className={classes.errorMessage}>{msg}</Typography>}
-        />
-    </FormControl>;
+      <ErrorMessage
+        name="category"
+        render={msg => <Typography className={classes.errorMessage}>{msg}</Typography>}
+      />
+    </FormControl>
+  );
 };
 
 ProductCategorySelect.propTypes = {
-    formik: PropTypes.shape({}).isRequired,
-  };
+  formik: PropTypes.shape({}).isRequired,
+};
 
 export default ProductCategorySelect;

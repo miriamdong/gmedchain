@@ -11,6 +11,6 @@ export const scope = 'app.components.Products';
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'This is the Products component!',
+    defaultMessage: '¡Este es el componente de productos!',
   },
 });

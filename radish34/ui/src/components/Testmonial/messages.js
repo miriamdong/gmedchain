@@ -11,6 +11,6 @@ export const scope = 'app.components.Testmonial';
 export default defineMessages({
   header: {
     id: `${scope}.header`,
-    defaultMessage: 'This is the Testmonial component!',
+    defaultMessage: 'Este es el componente Testmonial!',
   },
 });

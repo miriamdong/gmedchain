@@ -16,7 +16,7 @@ const DatePickerField = ({ field, form, label }) => {
         onChange={date => form.setFieldValue(field.name, moment(date).unix() * 1000)}
         minDate={today}
         format="MM/DD/YYYY"
-        minDateMessage="Date should not be before today's date"
+        minDateMessage="La fecha no debe ser anterior a la fecha de hoy"
       />
     </MuiPickersUtilsProvider>
   );

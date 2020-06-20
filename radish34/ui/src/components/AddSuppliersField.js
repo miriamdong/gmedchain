@@ -43,36 +43,30 @@ const AddSuppliersField = ({ formik, suppliers }) => {
   const [disabled, setDisabled] = useState({});
   const onTest = () => {
     // Do something
-    
-    //alert('pass');
-  
-  
-  
-  }
+    // alert('pass');
+  };
 
   return (
-    <Table className={classes.table} onChange={window.scrollTo(420,420)}>
+    <Table className={classes.table} onChange={window.scrollTo(420, 420)}>
       <TableHead>
         <TableRow>
-          <TableCell>Supplier</TableCell>
+          <TableCell>Proveedor</TableCell>
         </TableRow>
       </TableHead>
-      <FieldArray 
+      <FieldArray
         name="recipients"
-        render={
-          arrayHelpers => (
-          <TableBody >
+        render={arrayHelpers => (
+          <TableBody>
             {formik.values.recipients &&
               formik.values.recipients.length > 0 &&
               formik.values.recipients.map((supplier, index) => (
-                <TableRow key={index} >
-                  <TableCell className={classes.tableCell} >
+                <TableRow key={index}>
+                  <TableCell className={classes.tableCell}>
                     <Autocomplete
                       options={suppliers}
                       getOptionLabel={partner => partner.name}
                       disabled={disabled[index]}
                       onChange={(e, v) => {
-                        
                         const { __typename, ...partner } = v;
                         if (!find(formik.values.recipients, partner.name)) {
                           formik.setFieldValue(`recipients.${index}.partner`, partner);
@@ -95,7 +89,7 @@ const AddSuppliersField = ({ formik, suppliers }) => {
                         arrayHelpers.remove(index);
                       }}
                     >
-                      REMOVE
+                      REMOVER
                     </Button>
                     {!disabled[index] ? (
                       <Button
@@ -106,14 +100,14 @@ const AddSuppliersField = ({ formik, suppliers }) => {
                         }
                         disabled={formik.values.recipients[index] === ''}
                       >
-                        ADD
+                        AÑADIR
                       </Button>
                     ) : (
                       <Button
                         type="button"
                         onClick={() => setDisabled({ ...disabled, [index]: false })}
                       >
-                        EDIT
+                        EDITAR
                       </Button>
                     )}
                   </TableCell>
@@ -124,11 +118,10 @@ const AddSuppliersField = ({ formik, suppliers }) => {
                 <Button
                   type="button"
                   className={classes.button}
-                 
-                  onClick={() => !formik.values.recipients.includes('') && arrayHelpers.push('') }
+                  onClick={() => !formik.values.recipients.includes('') && arrayHelpers.push('')}
                 >
                   <Add className={classes.icon} />
-                  Add Supplier
+                  Añadir proveedor
                 </Button>
               </TableCell>
             </TableRow>
@@ -141,10 +134,7 @@ const AddSuppliersField = ({ formik, suppliers }) => {
               </TableCell>
             </TableRow>
           </TableBody>
-      
-      )
-      
-      }
+        )}
       />
     </Table>
   );
