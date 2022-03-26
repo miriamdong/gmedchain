@@ -51,7 +51,7 @@
     "husky": "^4.2.3",
     "jest": "^24.8.0",
     "jsdoc": "^3.6.3",
-    "minimist": ">=0.2.1",
+    "minimist": ">=1.2.6",
     "mongodb": "^3.5.5",
     "node-sass": "^4.14.0",
     "solhint": "2.1.0",
