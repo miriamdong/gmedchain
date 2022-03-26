@@ -46,7 +46,7 @@
     "joi-browser": "^13.4.0",
     "js-cookie": "^2.2.1",
     "keccak": "^2.1.0",
-    "minimist": "1.2.0",
+    "minimist": "1.2.6",
     "react-chartist": "^0.14.3",
     "react-countup": "^4.2.3",
     "react-helmet": "^6.0.0",
